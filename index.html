@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Fantech Construction | Kenya's #1 Premier Building & Civil Works Contractor</title>
+    <meta name="description" content="Fantech Construction – Nairobi, Kenya. Award-winning expert in architectural designs, BOQ, general construction, civil works, swimming pools, electric fences, interior finishing & material supply. Call 0718 697501">
+    <meta name="keywords" content="construction Kenya, building contractor Nairobi, swimming pool design, electric fence installation, BOQ, civil works Kenya, Fantech">
+    <meta name="author" content="Fanuel Omondi Odeny - Fantech Construction">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Fantech Construction | Kenya's Premier Builder">
+    <meta property="og:description" content="Award-winning construction services across Kenya. 250+ projects completed. Call 0718 697501">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: #FFFFFF;
+        }
+
+        :root {
+            --primary: #0A2540;
+            --primary-dark: #061830;
+            --primary-light: #1a3a5c;
+            --accent: #FF6600;
+            --accent-dark: #E55A00;
+            --accent-light: #FF8533;
+            --neutral: #2C3E50;
+            --neutral-light: #F5F5F5;
+            --text-light: #FFFFFF;
+            --text-dark: #1A1A1A;
+            --gray: #E8E8E8;
+            --shadow-sm: 0 5px 20px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+            --shadow-hover: 0 25px 45px rgba(0,0,0,0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--neutral-light);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-dark);
+        }
+
+        /* Loading Spinner */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .loader-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255,102,0,0.2);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Scroll Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: var(--accent);
+            z-index: 1002;
+            transition: width 0.2s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 102, 0, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 102, 0, 0); }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .fade-up { animation: fadeInUp 0.8s ease forwards; }
+        .fade-left { animation: fadeInLeft 0.8s ease forwards; }
+        .fade-right { animation: fadeInRight 0.8s ease forwards; }
+        .zoom-in { animation: zoomIn 0.6s ease forwards; }
+        .float { animation: float 3s ease-in-out infinite; }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--primary);
+            color: var(--text-light);
+            padding: 12px 0;
+            font-size: 14px;
+            z-index: 1001;
+            position: relative;
+        }
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .top-bar a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .top-bar a:hover { color: var(--text-light); transform: translateX(2px); }
+        .top-bar i { margin-right: 8px; }
+
+        /* Navigation - Sticky with Shrink Effect */
+        .navbar {
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .navbar.shrink {
+            padding: 8px 0;
+            box-shadow: var(--shadow-md);
+        }
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 15px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            transition: padding 0.3s ease;
+        }
+        .navbar.shrink .nav-container {
+            padding: 8px 24px;
+        }
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            line-height: 1.2;
+            font-weight: 800;
+        }
+        .logo p {
+            font-size: 0.7rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--neutral);
+            transition: 0.3s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--accent); }
+        .quote-nav {
+            background: var(--accent);
+            color: var(--text-light) !important;
+            padding: 10px 28px;
+            border-radius: 50px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .quote-nav::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        .quote-nav:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        .quote-nav:hover { background: var(--accent-dark); transform: scale(1.05); }
+        .quote-nav::after { display: none; }
+
+        /* Hero Slideshow */
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+        }
+        .slide.active { opacity: 1; }
+        .slide1 { background: linear-gradient(135deg, rgba(10,37,64,0.65) 0%, rgba(10,37,64,0.55) 100%), url('https://i.ibb.co/mVFvZsb6/Bc-U6T.jpg'); }
+        .slide2 { background: linear-gradient(135deg, rgba(10,37,64,0.65) 0%, rgba(10,37,64,0.55) 100%), url('https://i.ibb.co/mVwY6vK1/e-Cz6F.jpg'); }
+        .slide3 { background: linear-gradient(135deg, rgba(10,37,64,0.65) 0%, rgba(10,37,64,0.55) 100%), url('https://i.ibb.co/vxV4Q4wh/o-MM97.jpg'); }
+        .slide4 { background: linear-gradient(135deg, rgba(10,37,64,0.65) 0%, rgba(10,37,64,0.55) 100%), url('https://i.ibb.co/WvcRtG64/VCtat.jpg'); }
+        .slide5 { background: linear-gradient(135deg, rgba(10,37,64,0.65) 0%, rgba(10,37,64,0.55) 100%), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=90'); }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--text-light);
+            max-width: 700px;
+            padding: 0 24px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,102,0,0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,102,0,0.4);
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero h1 span { color: var(--accent); }
+        .typing-text {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            min-height: 70px;
+        }
+        .typing-text .typed {
+            color: var(--accent);
+            font-weight: 600;
+            border-right: 2px solid var(--accent);
+            padding-right: 5px;
+            animation: blink 0.7s infinite;
+        }
+        .hero-desc {
+            font-size: 1rem;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+        .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; }
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            transition: left 0.3s;
+            z-index: -1;
+        }
+        .btn:hover::before { left: 0; }
+        .btn-primary {
+            background: var(--accent);
+            color: var(--text-light);
+        }
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .btn-outline {
+            border: 2px solid var(--text-light);
+            color: var(--text-light);
+            background: transparent;
+        }
+        .btn-outline:hover {
+            background: var(--text-light);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Slide Indicators */
+        .slide-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 3;
+        }
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .indicator.active {
+            background: var(--accent);
+            width: 30px;
+            border-radius: 10px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--text-light);
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 60px;
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            text-align: center;
+        }
+        .stat-item {
+            flex: 1;
+            min-width: 150px;
+            transition: transform 0.3s;
+        }
+        .stat-item:hover { transform: translateY(-5px); }
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+        .stat-label { font-weight: 500; color: var(--neutral); }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: var(--primary);
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        .service-card {
+            background: var(--text-light);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--gray);
+            cursor: pointer;
+        }
+        .service-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+        .service-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .service-card:hover .service-img { transform: scale(1.08); }
+        .service-content {
+            padding: 25px;
+            text-align: center;
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+        .service-card:hover .service-icon { transform: scale(1.2) rotate(5deg); }
+        .service-content h3 { margin-bottom: 12px; color: var(--primary); }
+        .service-content p { color: var(--neutral); margin-bottom: 15px; }
+        .service-link {
+            display: inline-block;
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .service-link:hover { transform: translateX(5px); color: var(--accent-dark); }
+
+        /* Projects Section - FIXED WITH WORKING IMAGES */
+        .projects-section {
+            background: var(--neutral-light);
+            padding: 80px 0;
+            margin: 60px 0;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        .project-card {
+            background: var(--text-light);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s;
+        }
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-hover);
+        }
+        .project-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .project-card:hover .project-img { transform: scale(1.08); }
+        .project-info { padding: 25px; }
+        .project-info h3 { margin-bottom: 8px; color: var(--primary); }
+        .project-location { color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+
+        /* Why Choose Us */
+        .why-choose { padding: 80px 0; }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .feature {
+            text-align: center;
+            padding: 35px 25px;
+            background: var(--text-light);
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+        }
+        .feature:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        .feature i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .feature:hover i { transform: scale(1.2); }
+        .feature h3 { color: var(--primary); margin-bottom: 10px; }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 80px 0;
+            color: var(--text-light);
+        }
+        .testimonials-section .section-title { color: var(--text-light); }
+        .testimonials-section .section-title::after { background: var(--accent); }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255,255,255,0.15);
+        }
+        .testimonial-card i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        .testimonial-card h4 { margin-top: 15px; color: var(--accent); }
+
+        /* Ready to Build */
+        .ready-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 80px 30px;
+            text-align: center;
+            border-radius: 30px;
+            margin: 60px 0;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+        }
+        .ready-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,102,0,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .ready-section h2 { font-size: 2.5rem; margin-bottom: 20px; position: relative; z-index: 1; }
+        .ready-section p { position: relative; z-index: 1; }
+        .ready-section .btn-primary {
+            background: var(--accent);
+            color: var(--text-light);
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .ready-section .btn-primary:hover { background: var(--accent-dark); transform: translateY(-3px); }
+
+        /* Contact */
+        .contact-section {
+            background: var(--text-light);
+            border-radius: 30px;
+            padding: 50px;
+            margin: 60px 0;
+            box-shadow: var(--shadow-lg);
+        }
+        .contact-flex { display: flex; flex-wrap: wrap; gap: 50px; }
+        .contact-info, .contact-form { flex: 1; }
+        .contact-info i {
+            color: var(--accent);
+            width: 30px;
+            margin-right: 12px;
+        }
+        .contact-info p { margin: 20px 0; color: var(--neutral); }
+        .contact-info h3 { color: var(--primary); margin-bottom: 20px; }
+        input, textarea, select {
+            width: 100%;
+            padding: 14px 18px;
+            margin: 12px 0;
+            border: 2px solid var(--gray);
+            border-radius: 12px;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255,102,0,0.1);
+            transform: translateY(-2px);
+        }
+        button {
+            background: var(--accent);
+            border: none;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+        }
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            transition: left 0.3s;
+        }
+        button:hover::before { left: 0; }
+        button:hover { background: var(--accent-dark); transform: translateX(5px); }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-md);
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            background: var(--accent-dark);
+            transform: translateY(-5px);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            border-radius: 50px;
+            padding: 14px 28px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: bold;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #128C7E;
+        }
+
+        /* AI ASSISTANT STYLES */
+        .ai-assistant {
+            position: fixed;
+            bottom: 120px;
+            left: 30px;
+            z-index: 1000;
+        }
+        .ai-button {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+        .ai-button:hover {
+            transform: scale(1.1);
+        }
+        .ai-button i {
+            font-size: 28px;
+            color: white;
+        }
+        .ai-chat-window {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            width: 350px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            animation: fadeInUp 0.3s ease;
+        }
+        .ai-chat-window.open {
+            display: flex;
+        }
+        .ai-header {
+            background: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ai-header h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .ai-header h4 i {
+            color: var(--accent);
+        }
+        .close-ai {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 0;
+        }
+        .ai-messages {
+            height: 300px;
+            overflow-y: auto;
+            padding: 15px;
+            background: var(--neutral-light);
+        }
+        .message {
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+        .message.bot {
+            align-items: flex-start;
+        }
+        .message.user {
+            align-items: flex-end;
+        }
+        .message .bubble {
+            max-width: 85%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: 13px;
+        }
+        .message.bot .bubble {
+            background: white;
+            color: var(--neutral);
+            border-top-left-radius: 5px;
+            box-shadow: var(--shadow-sm);
+        }
+        .message.user .bubble {
+            background: var(--accent);
+            color: white;
+            border-top-right-radius: 5px;
+        }
+        .ai-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 12px;
+            background: white;
+            border-top: 1px solid var(--gray);
+        }
+        .ai-option {
+            background: var(--neutral-light);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+            color: var(--primary);
+        }
+        .ai-option:hover {
+            background: var(--accent);
+            color: white;
+        }
+        .ai-input-area {
+            display: flex;
+            padding: 12px;
+            background: white;
+            border-top: 1px solid var(--gray);
+        }
+        .ai-input-area input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid var(--gray);
+            border-radius: 25px;
+            margin: 0;
+            font-size: 13px;
+        }
+        .ai-input-area input:focus {
+            transform: none;
+        }
+        .ai-input-area button {
+            width: auto;
+            padding: 10px 18px;
+            margin-left: 8px;
+            border-radius: 25px;
+            font-size: 13px;
+        }
+        @media (max-width: 768px) {
+            .ai-chat-window {
+                width: 300px;
+                bottom: 70px;
+            }
+            .ai-assistant {
+                bottom: 100px;
+                left: 15px;
+            }
+        }
+
+        footer {
+            background: var(--primary);
+            color: var(--text-light);
+            text-align: center;
+            padding: 50px 0;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+            .ready-section h2 { font-size: 1.6rem; }
+            .contact-section { padding: 30px 20px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .nav-links { justify-content: center; }
+            .stats-section { margin-top: -30px; }
+            .typing-text { font-size: 1rem; }
+            .back-to-top { bottom: 90px; right: 20px; width: 40px; height: 40px; }
+            .whatsapp-float { padding: 10px 20px; font-size: 14px; }
+        }
+
+        /* AOS Override */
+        [data-aos] {
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+        [data-aos].aos-animate {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+    <div class="loader-spinner"></div>
+</div>
+
+<!-- Scroll Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="container">
+        <div><i class="fas fa-phone-alt"></i> <a href="tel:+254718697501">0718 697 501</a> | <i class="fas fa-envelope"></i> <a href="mailto:fanuelodeny@gmail.com">fanuelodeny@gmail.com</a></div>
+        <div><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya | <i class="fas fa-clock"></i> Mon-Sat: 8AM - 6PM | <span id="liveTime"></span></div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<div class="navbar" id="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <h1>FANTECH<br>CONSTRUCTION</h1>
+            <p>Your Satisfaction Our Priority</p>
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact" class="quote-nav">Get a Quote</a>
+        </div>
+    </div>
+</div>
+
+<!-- Hero Slideshow -->
+<section class="hero" id="home">
+    <div class="slide slide1 active"></div>
+    <div class="slide slide2"></div>
+    <div class="slide slide3"></div>
+    <div class="slide slide4"></div>
+    <div class="slide slide5"></div>
+    
+    <div class="container hero-content">
+        <div class="hero-badge">
+            <i class="fas fa-hard-hat"></i> Kenya's Premier Construction Partner
+        </div>
+        <h1>Building the Future with <span>Precision</span> & Excellence</h1>
+        <div class="typing-text">
+            We specialize in: <span class="typed" id="typed-text"></span>
+        </div>
+        <p class="hero-desc">Trusted construction partner delivering world-class residential, commercial, and infrastructure projects across Kenya. 250+ projects completed with 98% client satisfaction.</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Free Consultation</a>
+            <a href="tel:+254718697501" class="btn btn-outline"><i class="fas fa-phone-alt"></i> Call Now</a>
+        </div>
+    </div>
+    
+    <div class="slide-indicators">
+        <div class="indicator active" data-slide="0"></div>
+        <div class="indicator" data-slide="1"></div>
+        <div class="indicator" data-slide="2"></div>
+        <div class="indicator" data-slide="3"></div>
+        <div class="indicator" data-slide="4"></div>
+    </div>
+</section>
+
+<!-- Stats -->
+<div class="container">
+    <div class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item"><div class="stat-number" data-target="250">0</div><div class="stat-label">Projects Completed</div></div>
+            <div class="stat-item"><div class="stat-number" data-target="18">0</div><div class="stat-label">Years Experience</div></div>
+            <div class="stat-item"><div class="stat-number" data-target="50">0</div><div class="stat-label">Expert Team</div></div>
+            <div class="stat-item"><div class="stat-number" data-target="98">0</div><div class="stat-label">Client Satisfaction</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- Services -->
+<div class="container" id="services">
+    <h2 class="section-title" data-aos="fade-up">What We Do</h2>
+    <div class="services-grid">
+        <div class="service-card" data-aos="zoom-in"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=85" alt="Architectural Design" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-drafting-compass"></i></div><h3>Architectural & Structural Designs</h3><p>Modern, approved drawings for any building type</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="100"><img src="https://images.pexels.com/photos/209251/pexels-photo-209251.jpeg?w=600&q=85" alt="Orange Tractor - BOQ" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-calculator"></i></div><h3>BOQ (Bill of Quantities)</h3><p>Accurate cost estimates & material schedules</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=85" alt="General Construction" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-building"></i></div><h3>General Construction</h3><p>Residential, commercial & industrial builds</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="300"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=85" alt="Civil Works" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-road"></i></div><h3>Civil Works</h3><p>Roads, bridges, earthworks with heavy equipment</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="400"><img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=85" alt="Material Supply" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-truck"></i></div><h3>Supply of Materials</h3><p>Quality cement, steel, timber & finishes</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="500"><img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&q=85" alt="Swimming Pool" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-swimmer"></i></div><h3>Swimming Pool Design & Build</h3><p>Luxury residential & commercial pools</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="600"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=85" alt="Interior Finishing" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-paint-roller"></i></div><h3>Interior Finishing</h3><p>Premium interior design and finishing</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="700"><img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=85" alt="Electric Fence" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-bolt"></i></div><h3>Electric Fence Installation</h3><p>Security electric fences & automation</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
+    </div>
+</div>
+
+<!-- Projects Section - ALL IMAGES NOW WORKING -->
+<div class="projects-section" id="projects">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Our Featured Projects</h2>
+        <div class="projects-grid">
+            <!-- Project 1 - CAT Bulldozer (WORKING IMAGE) -->
+            <div class="project-card" data-aos="flip-left">
+                <img src="https://images.pexels.com/photos/39365/construction-site-bulldozer-works-construction-39365.jpeg?w=600&q=85" alt="CAT Bulldozer at Kenyan Construction Site" class="project-img" loading="lazy">
+                <div class="project-info">
+                    <h3>Mombasa Road Earthworks</h3>
+                    <div class="project-location"><i class="fas fa-map-marker-alt"></i> Mombasa Road, Kenya</div>
+                    <p>Major earthworks using CAT bulldozers for highway expansion</p>
+                </div>
+            </div>
+            <!-- Project 2 - Excavator (WORKING IMAGE) -->
+            <div class="project-card" data-aos="flip-left" data-aos-delay="100">
+                <img src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?w=600&q=85" alt="Excavator at Kenyan Construction Site" class="project-img" loading="lazy">
+                <div class="project-info">
+                    <h3>Thika Road Excavation</h3>
+                    <div class="project-location"><i class="fas fa-map-marker-alt"></i> Thika, Kenya</div>
+                    <p>Heavy excavation using excavators for foundation works</p>
+                </div>
+            </div>
+            <!-- Project 3 - Wheel Loader (WORKING IMAGE) -->
+            <div class="project-card" data-aos="flip-left" data-aos-delay="200">
+                <img src="https://images.pexels.com/photos/209247/pexels-photo-209247.jpeg?w=600&q=85" alt="Wheel Loader at Kenyan Site" class="project-img" loading="lazy">
+                <div class="project-info">
+                    <h3>Nairobi Expressway Material Handling</h3>
+                    <div class="project-location"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</div>
+                    <p>Wheel loaders transporting construction materials</p>
+                </div>
+            </div>
+            <!-- Project 4 - Your VCtat image -->
+            <div class="project-card" data-aos="flip-left" data-aos-delay="300">
+                <img src="https://i.ibb.co/WvcRtG64/VCtat.jpg" alt="Thika Road Construction" class="project-img" loading="lazy">
+                <div class="project-info">
+                    <h3>Thika Road Highway Extension</h3>
+                    <div class="project-location"><i class="fas fa-map-marker-alt"></i> Kiambu, Kenya</div>
+                    <p>Major civil works & infrastructure development</p>
+                </div>
+            </div>
+            <!-- Project 5 - Your Bc image -->
+            <div class="project-card" data-aos="flip-left" data-aos-delay="400">
+                <img src="https://i.ibb.co/mVFvZsb6/Bc-U6T.jpg" alt="Fantech Headquarters" class="project-img" loading="lazy">
+                <div class="project-info">
+                    <h3>Fantech Headquarters</h3>
+                    <div class="project-location"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</div>
+                    <p>Premium commercial construction project</p>
+                </div>
+            </div>
+            <!-- Project 6 - Your eCz6F image -->
+            <div class="project-card" data-aos="flip-left" data-aos-delay="500">
+                <img src="https://i.ibb.co/mVwY6vK1/e-Cz6F.jpg" alt="Lavington Villas" class="project-img" loading="lazy">
+                <div class="project-info">
+                    <h3>Lavington Luxury Villas</h3>
+                    <div class="project-location"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</div>
+                    <p>High-end residential complex with modern finishes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Why Choose Us -->
+<div class="container">
+    <div class="why-choose">
+        <h2 class="section-title" data-aos="fade-up">Why Choose Fantech?</h2>
+        <div class="features-grid">
+            <div class="feature" data-aos="zoom-in"><i class="fas fa-certificate"></i><h3>Licensed & Certified</h3><p>Fully licensed construction professionals with NCA approval</p></div>
+            <div class="feature" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-clock"></i><h3>On-Time Delivery</h3><p>Project completion as promised, every single time</p></div>
+            <div class="feature" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-shield-alt"></i><h3>Quality Materials</h3><p>Premium quality construction materials from trusted suppliers</p></div>
+            <div class="feature" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-chart-line"></i><h3>Transparent Pricing</h3><p>No hidden costs, clear estimates with detailed BOQ</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- Testimonials -->
+<div class="testimonials-section" id="testimonials">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">What Our Clients Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card" data-aos="fade-right"><i class="fas fa-quote-left"></i><p>"Fantech delivered our commercial complex on time and within budget. Exceptional quality and professionalism."</p><h4>- James Mwangi</h4><span>Property Developer</span></div>
+            <div class="testimonial-card" data-aos="fade-up"><i class="fas fa-quote-left"></i><p>"From design to completion, the team was transparent, skilled, and dedicated. Our dream home became reality."</p><h4>- Sarah Ochieng</h4><span>Homeowner</span></div>
+            <div class="testimonial-card" data-aos="fade-left"><i class="fas fa-quote-left"></i><p>"Outstanding renovation and electric fence installation. Attention to detail exceeded expectations."</p><h4>- David Kimani</h4><span>Business Owner</span></div>
+        </div>
+    </div>
+</div>
+
+<!-- Ready to Build -->
+<div class="container">
+    <div class="ready-section" data-aos="zoom-in">
+        <h2>Ready to Build Your Dream Project?</h2>
+        <p>Get in touch today for a free consultation and quote. Let's bring your vision to life.</p>
+        <a href="#contact" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Get a Quote</a>
+    </div>
+</div>
+
+<!-- Contact -->
+<div class="container" id="contact">
+    <div class="contact-section" data-aos="fade-up">
+        <div class="contact-flex">
+            <div class="contact-info">
+                <h3><i class="fas fa-hard-hat"></i> Fantech Construction Services</h3>
+                <p><i class="fas fa-user-tie"></i> <strong>Fanuel Omondi Odeny</strong> (Managing Director)</p>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:+254718697501">0718 697 501</a> / <a href="tel:+254781250142">0781 250 142</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:fanuelodeny@gmail.com">fanuelodeny@gmail.com</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                <hr style="margin: 25px 0;">
+                <p><strong>Our Services Include:</strong></p>
+                <p>✓ Architectural & Structural Designs<br>✓ BOQ (Bill of Quantities)<br>✓ General Construction<br>✓ Civil Works<br>✓ Supply of Materials<br>✓ Swimming Pool Design & Build<br>✓ Interior Finishing<br>✓ Electric Fence Installation</p>
+            </div>
+            <div class="contact-form">
+                <form id="quoteForm" action="https://formspree.io/f/xkggapww" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                    <input type="email" name="email" placeholder="Email Address">
+                    <select name="service" required>
+                        <option value="">Select a Service</option>
+                        <option>Architectural Designs</option>
+                        <option>BOQ</option>
+                        <option>General Construction</option>
+                        <option>Civil Works</option>
+                        <option>Supply of Materials</option>
+                        <option>Swimming Pool</option>
+                        <option>Interior Finishing</option>
+                        <option>Electric Fence</option>
+                    </select>
+                    <textarea rows="4" name="message" placeholder="Tell us about your project..."></textarea>
+                    <button type="submit">Send Request →</button>
+                </form>
+                <div id="formStatus" style="margin-top: 15px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/254718697501?text=Hello%20Fantech%2C%20I%20need%20a%20quote%20for%20construction%20services." class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp" style="font-size: 20px;"></i> Chat on WhatsApp
+</a>
+
+<!-- FANTECH AI ASSISTANT -->
+<div class="ai-assistant">
+    <div class="ai-button" id="aiButton">
+        <i class="fas fa-robot"></i>
+    </div>
+    <div class="ai-chat-window" id="aiChatWindow">
+        <div class="ai-header">
+            <h4><i class="fas fa-robot"></i> Fantech AI Assistant</h4>
+            <button class="close-ai" id="closeAi"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="ai-messages" id="aiMessages">
+            <div class="message bot">
+                <div class="bubble">👋 Jambo! I'm Fantech's AI Assistant. How can I help you today?</div>
+            </div>
+        </div>
+        <div class="ai-options" id="aiOptions">
+            <div class="ai-option" data-question="What services do you offer?">📋 Our Services</div>
+            <div class="ai-option" data-question="How much does construction cost?">💰 Cost Estimate</div>
+            <div class="ai-option" data-question="How long does a project take?">⏱️ Project Timeline</div>
+            <div class="ai-option" data-question="Are you licensed in Kenya?">✅ License Info</div>
+            <div class="ai-option" data-question="Get a quote">📞 Request Quote</div>
+        </div>
+        <div class="ai-input-area">
+            <input type="text" id="aiInput" placeholder="Type your question...">
+            <button id="aiSend"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p><strong>FANTECH CONSTRUCTION SERVICES</strong> | Your Satisfaction Our Priority</p>
+        <p>📞 0718 697 501 · ✉️ fanuelodeny@gmail.com · 📍 NAIROBI, KENYA</p>
+        <p style="margin-top: 20px;">© 2026 Fantech Construction | Kenya's Premier Builder</p>
+    </div>
+</footer>
+
+<script>
+    // AI Assistant Responses
+    const aiResponses = {
+        default: "Thank you for your question! Please call us at 0718 697 501 or WhatsApp us for a detailed response from our team.",
+        "services": "🏗️ Fantech offers: Architectural Designs, BOQ, General Construction, Civil Works, Material Supply, Swimming Pools, Interior Finishing, and Electric Fence Installation. Which service interests you?",
+        "cost": "💰 Construction costs vary by project. For an accurate estimate, please request a free consultation via our contact form or WhatsApp us at 0718 697 501.",
+        "timeline": "⏱️ Project timelines depend on scope. A typical residential house takes 6-9 months, commercial buildings 12-24 months. Contact us for a specific timeline!",
+        "licensed": "✅ Yes! Fantech is fully licensed by the National Construction Authority (NCA) and all our professionals are certified in Kenya.",
+        "quote": "📞 Great! Please fill out the contact form above or WhatsApp us at 0718 697 501 for a free, no-obligation quote within 24 hours.",
+        "hello": "👋 Jambo! Welcome to Fantech Construction. How can I assist with your construction needs today?",
+        "pool": "🏊 Yes! We design and build luxury swimming pools for residential and commercial properties. Request a quote for a custom pool design!",
+        "fence": "⚡ Yes! We install electric security fences with automation. Get a free quote today!",
+        "material": "🚛 We supply premium construction materials including cement, steel, timber, tiles, and finishing materials at competitive prices."
+    };
+
+    function getAIResponse(question) {
+        const q = question.toLowerCase();
+        if (q.includes("service") || q.includes("offer")) return aiResponses.services;
+        if (q.includes("cost") || q.includes("price") || q.includes("estimate")) return aiResponses.cost;
+        if (q.includes("timeline") || q.includes("long") || q.includes("duration")) return aiResponses.timeline;
+        if (q.includes("license") || q.includes("certified") || q.includes("nca")) return aiResponses.licensed;
+        if (q.includes("quote") || q.includes("estimate")) return aiResponses.quote;
+        if (q.includes("pool") || q.includes("swimming")) return aiResponses.pool;
+        if (q.includes("fence") || q.includes("electric")) return aiResponses.fence;
+        if (q.includes("material") || q.includes("supply")) return aiResponses.material;
+        if (q.includes("hello") || q.includes("hi") || q.includes("jambo")) return aiResponses.hello;
+        return aiResponses.default;
+    }
+
+    // AI Chat Functionality
+    const aiButton = document.getElementById('aiButton');
+    const aiChatWindow = document.getElementById('aiChatWindow');
+    const closeAi = document.getElementById('closeAi');
+    const aiInput = document.getElementById('aiInput');
+    const aiSend = document.getElementById('aiSend');
+    const aiMessages = document.getElementById('aiMessages');
+
+    function addMessage(text, isUser = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+        messageDiv.innerHTML = `<div class="bubble">${text}</div>`;
+        aiMessages.appendChild(messageDiv);
+        aiMessages.scrollTop = aiMessages.scrollHeight;
+    }
+
+    function sendUserMessage(message) {
+        addMessage(message, true);
+        setTimeout(() => {
+            const response = getAIResponse(message);
+            addMessage(response);
+        }, 500);
+    }
+
+    aiButton.addEventListener('click', () => {
+        aiChatWindow.classList.toggle('open');
+    });
+
+    closeAi.addEventListener('click', () => {
+        aiChatWindow.classList.remove('open');
+    });
+
+    aiSend.addEventListener('click', () => {
+        const message = aiInput.value.trim();
+        if (message) {
+            sendUserMessage(message);
+            aiInput.value = '';
+        }
+    });
+
+    aiInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            aiSend.click();
+        }
+    });
+
+    document.querySelectorAll('.ai-option').forEach(option => {
+        option.addEventListener('click', () => {
+            const question = option.getAttribute('data-question');
+            sendUserMessage(question);
+        });
+    });
+
+    // Hide Loader
+    window.addEventListener('load', function() {
+        const loader = document.getElementById('loader');
+        loader.classList.add('hidden');
+        setTimeout(() => loader.style.display = 'none', 500);
+    });
+
+    // Scroll Progress Bar
+    window.addEventListener('scroll', function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+
+    // Sticky Header Shrink
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 100) {
+            navbar.classList.add('shrink');
+        } else {
+            navbar.classList.remove('shrink');
+        }
+    });
+
+    // Back to Top Button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+    backToTop.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Live Time (Kenya Time)
+    function updateTime() {
+        const now = new Date();
+        const kenyaTime = now.toLocaleTimeString('en-US', { timeZone: 'Africa/Nairobi', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        const timeElement = document.getElementById('liveTime');
+        if (timeElement) timeElement.textContent = kenyaTime;
+    }
+    updateTime();
+    setInterval(updateTime, 1000);
+
+    // Typing Animation
+    const words = ["Architectural Designs", "BOQ & Costing", "General Construction", "Civil Works", "Swimming Pools", "Electric Fences", "Interior Finishing"];
+    let i = 0;
+    let currentWord = "";
+    let isDeleting = false;
+    const typedElement = document.getElementById("typed-text");
+
+    function typeEffect() {
+        if (!typedElement) return;
+        if (isDeleting) {
+            currentWord = words[i].substring(0, currentWord.length - 1);
+        } else {
+            currentWord = words[i].substring(0, currentWord.length + 1);
+        }
+        typedElement.textContent = currentWord;
+
+        if (!isDeleting && currentWord === words[i]) {
+            isDeleting = true;
+            setTimeout(typeEffect, 2000);
+        } else if (isDeleting && currentWord === "") {
+            isDeleting = false;
+            i = (i + 1) % words.length;
+            setTimeout(typeEffect, 500);
+        } else {
+            setTimeout(typeEffect, isDeleting ? 100 : 150);
+        }
+    }
+    typeEffect();
+
+    // Counter Animation
+    const counters = document.querySelectorAll('.stat-number');
+    const speed = 200;
+
+    const animateCounters = () => {
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            let count = 0;
+            const updateCount = () => {
+                const increment = target / speed;
+                if (count < target) {
+                    count += increment;
+                    counter.innerText = Math.ceil(count) + (target === 98 ? '%' : '+');
+                    setTimeout(updateCount, 20);
+                } else {
+                    counter.innerText = target + (target === 98 ? '%' : '+');
+                }
+            };
+            updateCount();
+        });
+    };
+
+    // Intersection Observer for Counters
+    const observerOptions = { threshold: 0.5 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    document.querySelectorAll('.stats-section').forEach(section => observer.observe(section));
+
+    // Hero Slideshow
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+        currentSlide = index;
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+    }
+
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => showSlide(index));
+    });
+
+    setInterval(nextSlide, 5000);
+
+    // AOS-like animation on scroll
+    const animatedElements = document.querySelectorAll('[data-aos]');
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('aos-animate');
+                scrollObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    animatedElements.forEach(el => scrollObserver.observe(el));
+
+    // Form Submission
+    document.getElementById('quoteForm')?.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const statusDiv = document.getElementById('formStatus');
+        statusDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        statusDiv.style.color = "#FF6600";
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
+                statusDiv.innerHTML = '✅ Request sent! We will call you within 24 hours.';
+                statusDiv.style.color = "green";
+                form.reset();
+                setTimeout(() => statusDiv.innerHTML = '', 5000);
+            } else {
+                statusDiv.innerHTML = '❌ Error. Please call 0718 697501 directly.';
+                statusDiv.style.color = "red";
+            }
+        } catch {
+            statusDiv.innerHTML = '❌ Network error. Use WhatsApp or call us.';
+            statusDiv.style.color = "red";
+        }
+    });
+</script>
+</body>
+</html>
