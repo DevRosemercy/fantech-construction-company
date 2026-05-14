@@ -8,14 +8,38 @@
     <meta name="keywords" content="construction Kenya, building contractor Nairobi, swimming pool design, electric fence installation, BOQ, civil works Kenya, Fantech">
     <meta name="author" content="Fanuel Omondi Odeny - Fantech Construction">
     <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE">
     
-    <!-- Open Graph -->
+    <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Fantech Construction | Kenya's Premier Builder">
     <meta property="og:description" content="Award-winning construction services across Kenya. 250+ projects completed. Call 0718 697501">
+    <meta property="og:image" content="https://fantech.vercel.app/og-image.jpg">
+    <meta property="og:url" content="https://fantech.vercel.app">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_KE">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fantech Construction | Kenya's Premier Builder">
+    <meta name="twitter:description" content="Award-winning construction services across Kenya. 250+ projects completed.">
+    <meta name="twitter:image" content="https://fantech.vercel.app/twitter-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fantech.vercel.app">
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="KE">
+    <meta name="geo.placename" content="Nairobi">
+    <meta name="geo.position" content="-1.286389;36.817223">
+    <meta name="ICBM" content="-1.286389, 36.817223">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -45,6 +69,8 @@
             --text-light: #FFFFFF;
             --text-dark: #1A1A1A;
             --gray: #E8E8E8;
+            --success: #10B981;
+            --error: #EF4444;
             --shadow-sm: 0 5px 20px rgba(0,0,0,0.05);
             --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
             --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
@@ -55,7 +81,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -65,9 +90,6 @@
         ::-webkit-scrollbar-thumb {
             background: var(--accent);
             border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-dark);
         }
 
         /* Loading Spinner */
@@ -100,7 +122,7 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Scroll Progress Bar */
+        /* Progress Bar */
         .progress-bar {
             position: fixed;
             top: 0;
@@ -137,16 +159,11 @@
         @keyframes blink {
             50% { border-color: transparent; }
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
 
         .fade-up { animation: fadeInUp 0.8s ease forwards; }
         .fade-left { animation: fadeInLeft 0.8s ease forwards; }
         .fade-right { animation: fadeInRight 0.8s ease forwards; }
         .zoom-in { animation: zoomIn 0.6s ease forwards; }
-        .float { animation: float 3s ease-in-out infinite; }
 
         /* Top Bar */
         .top-bar {
@@ -174,7 +191,7 @@
         .top-bar a:hover { color: var(--text-light); transform: translateX(2px); }
         .top-bar i { margin-right: 8px; }
 
-        /* Navigation - Sticky with Shrink Effect */
+        /* Navigation */
         .navbar {
             background: rgba(255,255,255,0.98);
             backdrop-filter: blur(10px);
@@ -226,6 +243,9 @@
             color: var(--neutral);
             transition: 0.3s;
             position: relative;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
         }
         .nav-links a::after {
             content: '';
@@ -265,7 +285,6 @@
             height: 300px;
         }
         .quote-nav:hover { background: var(--accent-dark); transform: scale(1.05); }
-        .quote-nav::after { display: none; }
 
         /* Hero Slideshow */
         .hero {
@@ -346,6 +365,10 @@
             position: relative;
             overflow: hidden;
             z-index: 1;
+            min-height: 52px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         .btn::before {
             content: '';
@@ -510,7 +533,7 @@
         }
         .service-link:hover { transform: translateX(5px); color: var(--accent-dark); }
 
-        /* Projects Section - FIXED WITH WORKING IMAGES */
+        /* Projects Section */
         .projects-section {
             background: var(--neutral-light);
             padding: 80px 0;
@@ -641,7 +664,7 @@
         }
         .ready-section .btn-primary:hover { background: var(--accent-dark); transform: translateY(-3px); }
 
-        /* Contact */
+        /* Contact Form - WhatsApp Integrated */
         .contact-section {
             background: var(--text-light);
             border-radius: 30px;
@@ -658,20 +681,37 @@
         }
         .contact-info p { margin: 20px 0; color: var(--neutral); }
         .contact-info h3 { color: var(--primary); margin-bottom: 20px; }
+        
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
         input, textarea, select {
             width: 100%;
             padding: 14px 18px;
-            margin: 12px 0;
             border: 2px solid var(--gray);
             border-radius: 12px;
             font-family: inherit;
             transition: all 0.3s;
+            font-size: 16px;
         }
         input:focus, textarea:focus, select:focus {
             border-color: var(--accent);
             outline: none;
             box-shadow: 0 0 0 3px rgba(255,102,0,0.1);
             transform: translateY(-2px);
+        }
+        input.error, textarea.error, select.error {
+            border-color: var(--error);
+        }
+        .error-message {
+            color: var(--error);
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+        .error-message.show {
+            display: block;
         }
         button {
             background: var(--accent);
@@ -685,6 +725,8 @@
             color: var(--text-light);
             position: relative;
             overflow: hidden;
+            width: 100%;
+            min-height: 52px;
         }
         button::before {
             content: '';
@@ -697,9 +739,44 @@
             transition: left 0.3s;
         }
         button:hover::before { left: 0; }
-        button:hover { background: var(--accent-dark); transform: translateX(5px); }
+        button:hover { background: var(--accent-dark); transform: translateY(-2px); }
+        button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--primary);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            z-index: 10000;
+            transition: transform 0.3s ease;
+            box-shadow: var(--shadow-lg);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+        .toast.success {
+            background: var(--success);
+        }
+        .toast.error {
+            background: var(--error);
+        }
+        .toast i {
+            font-size: 20px;
+        }
 
-        /* Back to Top Button */
+        /* Back to Top */
         .back-to-top {
             position: fixed;
             bottom: 100px;
@@ -752,7 +829,7 @@
             background: #128C7E;
         }
 
-        /* AI ASSISTANT STYLES */
+        /* AI Assistant */
         .ai-assistant {
             position: fixed;
             bottom: 120px;
@@ -808,9 +885,6 @@
             align-items: center;
             gap: 10px;
         }
-        .ai-header h4 i {
-            color: var(--accent);
-        }
         .close-ai {
             background: none;
             border: none;
@@ -818,6 +892,7 @@
             font-size: 20px;
             cursor: pointer;
             padding: 0;
+            width: auto;
         }
         .ai-messages {
             height: 300px;
@@ -898,16 +973,6 @@
             border-radius: 25px;
             font-size: 13px;
         }
-        @media (max-width: 768px) {
-            .ai-chat-window {
-                width: 300px;
-                bottom: 70px;
-            }
-            .ai-assistant {
-                bottom: 100px;
-                left: 15px;
-            }
-        }
 
         footer {
             background: var(--primary);
@@ -928,9 +993,19 @@
             .typing-text { font-size: 1rem; }
             .back-to-top { bottom: 90px; right: 20px; width: 40px; height: 40px; }
             .whatsapp-float { padding: 10px 20px; font-size: 14px; }
+            .ai-chat-window {
+                width: 300px;
+                bottom: 70px;
+            }
+            .ai-assistant {
+                bottom: 100px;
+                left: 15px;
+            }
+            input, textarea, select {
+                font-size: 16px;
+            }
         }
 
-        /* AOS Override */
         [data-aos] {
             opacity: 0;
             transition: all 0.8s ease;
@@ -947,8 +1022,11 @@
     <div class="loader-spinner"></div>
 </div>
 
-<!-- Scroll Progress Bar -->
+<!-- Progress Bar -->
 <div class="progress-bar" id="progressBar"></div>
+
+<!-- Toast Container -->
+<div id="toast" class="toast"></div>
 
 <!-- Top Bar -->
 <div class="top-bar">
@@ -1024,7 +1102,7 @@
     <h2 class="section-title" data-aos="fade-up">What We Do</h2>
     <div class="services-grid">
         <div class="service-card" data-aos="zoom-in"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=85" alt="Architectural Design" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-drafting-compass"></i></div><h3>Architectural & Structural Designs</h3><p>Modern, approved drawings for any building type</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="100"><img src="https://images.pexels.com/photos/209251/pexels-photo-209251.jpeg?w=600&q=85" alt="Orange Tractor - BOQ" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-calculator"></i></div><h3>BOQ (Bill of Quantities)</h3><p>Accurate cost estimates & material schedules</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="100"><img src="https://images.pexels.com/photos/209251/pexels-photo-209251.jpeg?w=600&q=85" alt="BOQ Services" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-calculator"></i></div><h3>BOQ (Bill of Quantities)</h3><p>Accurate cost estimates & material schedules</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
         <div class="service-card" data-aos="zoom-in" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=85" alt="General Construction" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-building"></i></div><h3>General Construction</h3><p>Residential, commercial & industrial builds</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
         <div class="service-card" data-aos="zoom-in" data-aos-delay="300"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=85" alt="Civil Works" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-road"></i></div><h3>Civil Works</h3><p>Roads, bridges, earthworks with heavy equipment</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
         <div class="service-card" data-aos="zoom-in" data-aos-delay="400"><img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=85" alt="Material Supply" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-truck"></i></div><h3>Supply of Materials</h3><p>Quality cement, steel, timber & finishes</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
@@ -1034,12 +1112,11 @@
     </div>
 </div>
 
-<!-- Projects Section - ALL IMAGES NOW WORKING -->
+<!-- Projects Section -->
 <div class="projects-section" id="projects">
     <div class="container">
         <h2 class="section-title" data-aos="fade-up">Our Featured Projects</h2>
         <div class="projects-grid">
-            <!-- Project 1 - CAT Bulldozer (WORKING IMAGE) -->
             <div class="project-card" data-aos="flip-left">
                 <img src="https://images.pexels.com/photos/39365/construction-site-bulldozer-works-construction-39365.jpeg?w=600&q=85" alt="CAT Bulldozer at Kenyan Construction Site" class="project-img" loading="lazy">
                 <div class="project-info">
@@ -1048,7 +1125,6 @@
                     <p>Major earthworks using CAT bulldozers for highway expansion</p>
                 </div>
             </div>
-            <!-- Project 2 - Excavator (WORKING IMAGE) -->
             <div class="project-card" data-aos="flip-left" data-aos-delay="100">
                 <img src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?w=600&q=85" alt="Excavator at Kenyan Construction Site" class="project-img" loading="lazy">
                 <div class="project-info">
@@ -1057,7 +1133,6 @@
                     <p>Heavy excavation using excavators for foundation works</p>
                 </div>
             </div>
-            <!-- Project 3 - Wheel Loader (WORKING IMAGE) -->
             <div class="project-card" data-aos="flip-left" data-aos-delay="200">
                 <img src="https://images.pexels.com/photos/209247/pexels-photo-209247.jpeg?w=600&q=85" alt="Wheel Loader at Kenyan Site" class="project-img" loading="lazy">
                 <div class="project-info">
@@ -1066,7 +1141,6 @@
                     <p>Wheel loaders transporting construction materials</p>
                 </div>
             </div>
-            <!-- Project 4 - Your VCtat image -->
             <div class="project-card" data-aos="flip-left" data-aos-delay="300">
                 <img src="https://i.ibb.co/WvcRtG64/VCtat.jpg" alt="Thika Road Construction" class="project-img" loading="lazy">
                 <div class="project-info">
@@ -1075,7 +1149,6 @@
                     <p>Major civil works & infrastructure development</p>
                 </div>
             </div>
-            <!-- Project 5 - Your Bc image -->
             <div class="project-card" data-aos="flip-left" data-aos-delay="400">
                 <img src="https://i.ibb.co/mVFvZsb6/Bc-U6T.jpg" alt="Fantech Headquarters" class="project-img" loading="lazy">
                 <div class="project-info">
@@ -1084,7 +1157,6 @@
                     <p>Premium commercial construction project</p>
                 </div>
             </div>
-            <!-- Project 6 - Your eCz6F image -->
             <div class="project-card" data-aos="flip-left" data-aos-delay="500">
                 <img src="https://i.ibb.co/mVwY6vK1/e-Cz6F.jpg" alt="Lavington Villas" class="project-img" loading="lazy">
                 <div class="project-info">
@@ -1131,7 +1203,7 @@
     </div>
 </div>
 
-<!-- Contact -->
+<!-- Contact Section with WhatsApp Form -->
 <div class="container" id="contact">
     <div class="contact-section" data-aos="fade-up">
         <div class="contact-flex">
@@ -1144,33 +1216,58 @@
                 <hr style="margin: 25px 0;">
                 <p><strong>Our Services Include:</strong></p>
                 <p>✓ Architectural & Structural Designs<br>✓ BOQ (Bill of Quantities)<br>✓ General Construction<br>✓ Civil Works<br>✓ Supply of Materials<br>✓ Swimming Pool Design & Build<br>✓ Interior Finishing<br>✓ Electric Fence Installation</p>
+                <hr style="margin: 25px 0;">
+                <div style="background: #F0F8FF; padding: 20px; border-radius: 15px;">
+                    <p><i class="fas fa-clock"></i> <strong>Response Time:</strong></p>
+                    <p>📱 WhatsApp: Within 30 minutes<br>📞 Phone: Immediate<br>✉️ Email: Within 24 hours</p>
+                </div>
             </div>
             <div class="contact-form">
-                <form id="quoteForm" action="https://formspree.io/f/xkggapww" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="tel" name="phone" placeholder="Phone Number" required>
-                    <input type="email" name="email" placeholder="Email Address">
-                    <select name="service" required>
-                        <option value="">Select a Service</option>
-                        <option>Architectural Designs</option>
-                        <option>BOQ</option>
-                        <option>General Construction</option>
-                        <option>Civil Works</option>
-                        <option>Supply of Materials</option>
-                        <option>Swimming Pool</option>
-                        <option>Interior Finishing</option>
-                        <option>Electric Fence</option>
-                    </select>
-                    <textarea rows="4" name="message" placeholder="Tell us about your project..."></textarea>
-                    <button type="submit">Send Request →</button>
+                <h3 style="margin-bottom: 20px; color: var(--primary);">📋 Request a Free Quote</h3>
+                <p style="margin-bottom: 20px; color: var(--neutral);">Fill this form and we'll respond on WhatsApp within 30 minutes!</p>
+                <form id="whatsappForm">
+                    <div class="form-group">
+                        <input type="text" id="fullName" name="fullName" placeholder="Your Full Name" required>
+                        <div class="error-message" id="nameError">Please enter your name</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number (e.g., 0718 697 501)" required>
+                        <div class="error-message" id="phoneError">Please enter a valid Kenyan phone number</div>
+                    </div>
+                    <div class="form-group">
+                        <select id="serviceType" name="serviceType" required>
+                            <option value="">Select a Service</option>
+                            <option>Architectural & Structural Designs</option>
+                            <option>BOQ (Bill of Quantities)</option>
+                            <option>General Construction</option>
+                            <option>Civil Works</option>
+                            <option>Supply of Materials</option>
+                            <option>Swimming Pool Design & Build</option>
+                            <option>Interior Finishing</option>
+                            <option>Electric Fence Installation</option>
+                            <option>Complete Construction Package</option>
+                        </select>
+                        <div class="error-message" id="serviceError">Please select a service</div>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="4" id="projectDetails" name="projectDetails" placeholder="Tell us about your project (location, budget, timeline, etc.)"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="location" name="location" placeholder="Project Location (e.g., Nairobi, Kiambu, Mombasa)">
+                    </div>
+                    <button type="submit" id="submitBtn">
+                        <i class="fab fa-whatsapp"></i> Send via WhatsApp →
+                    </button>
                 </form>
-                <div id="formStatus" style="margin-top: 15px;"></div>
+                <p style="margin-top: 20px; font-size: 12px; color: var(--neutral); text-align: center;">
+                    <i class="fas fa-lock"></i> Your information is secure. We'll respond within 30 minutes.
+                </p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Back to Top Button -->
+<!-- Back to Top -->
 <a href="#" class="back-to-top" id="backToTop">
     <i class="fas fa-arrow-up"></i>
 </a>
@@ -1180,7 +1277,7 @@
     <i class="fab fa-whatsapp" style="font-size: 20px;"></i> Chat on WhatsApp
 </a>
 
-<!-- FANTECH AI ASSISTANT -->
+<!-- AI Assistant -->
 <div class="ai-assistant">
     <div class="ai-button" id="aiButton">
         <i class="fas fa-robot"></i>
@@ -1219,18 +1316,197 @@
 </footer>
 
 <script>
-    // AI Assistant Responses
+    // ==================== CONFIGURATION ====================
+    const CONFIG = {
+        whatsappNumber: "254718697501", // Without + or 0
+        companyName: "Fantech Construction",
+        responseTime: "30 minutes",
+        adminPhone: "0718 697 501"
+    };
+
+    // ==================== UTILITY FUNCTIONS ====================
+    function showToast(message, type = 'success') {
+        const toast = document.getElementById('toast');
+        toast.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${message}`;
+        toast.className = `toast ${type} show`;
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 5000);
+    }
+
+    function validateKenyanPhone(phone) {
+        // Remove spaces and special characters
+        const clean = phone.replace(/[\s\-\(\)]/g, '');
+        // Kenyan phone patterns: 07xxxxxxxx, 01xxxxxxxx, 2547xxxxxxxx, +2547xxxxxxxx
+        const patterns = [
+            /^07\d{8}$/,
+            /^01\d{8}$/,
+            /^2547\d{8}$/,
+            /^\+2547\d{8}$/
+        ];
+        return patterns.some(pattern => pattern.test(clean));
+    }
+
+    function formatPhoneForWhatsApp(phone) {
+        let clean = phone.replace(/[\s\-\(\)]/g, '');
+        if (clean.startsWith('0')) {
+            clean = '254' + clean.substring(1);
+        } else if (clean.startsWith('+')) {
+            clean = clean.substring(1);
+        }
+        return clean;
+    }
+
+    function validateForm() {
+        let isValid = true;
+        
+        // Validate Name
+        const name = document.getElementById('fullName').value.trim();
+        const nameError = document.getElementById('nameError');
+        if (!name || name.length < 2) {
+            nameError.classList.add('show');
+            document.getElementById('fullName').classList.add('error');
+            isValid = false;
+        } else {
+            nameError.classList.remove('show');
+            document.getElementById('fullName').classList.remove('error');
+        }
+        
+        // Validate Phone
+        const phone = document.getElementById('phoneNumber').value.trim();
+        const phoneError = document.getElementById('phoneError');
+        if (!phone || !validateKenyanPhone(phone)) {
+            phoneError.classList.add('show');
+            document.getElementById('phoneNumber').classList.add('error');
+            isValid = false;
+        } else {
+            phoneError.classList.remove('show');
+            document.getElementById('phoneNumber').classList.remove('error');
+        }
+        
+        // Validate Service
+        const service = document.getElementById('serviceType').value;
+        const serviceError = document.getElementById('serviceError');
+        if (!service || service === '') {
+            serviceError.classList.add('show');
+            document.getElementById('serviceType').classList.add('error');
+            isValid = false;
+        } else {
+            serviceError.classList.remove('show');
+            document.getElementById('serviceType').classList.remove('error');
+        }
+        
+        return isValid;
+    }
+
+    // ==================== WHATSAPP FORM SUBMISSION ====================
+    async function sendToWhatsApp(formData) {
+        const name = formData.get('fullName');
+        const phone = formData.get('phoneNumber');
+        const service = formData.get('serviceType');
+        const details = formData.get('projectDetails') || 'Not specified';
+        const location = formData.get('location') || 'Not specified';
+        
+        // Format the WhatsApp message
+        const message = `🏗️ *NEW CONSTRUCTION QUOTE REQUEST* 🏗️\n\n` +
+                       `*Client Name:* ${name}\n` +
+                       `*Phone:* ${phone}\n` +
+                       `*Service:* ${service}\n` +
+                       `*Location:* ${location}\n` +
+                       `*Project Details:*\n${details}\n\n` +
+                       `_Submitted via Fantech Website Form_\n` +
+                       `📅 ${new Date().toLocaleString('en-KE', { timeZone: 'Africa/Nairobi' })}`;
+        
+        // Format phone for WhatsApp
+        const whatsappPhone = formatPhoneForWhatsApp(CONFIG.whatsappNumber);
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodedMessage}`;
+        
+        // Open WhatsApp in a new tab
+        window.open(whatsappUrl, '_blank');
+        
+        // Also send an auto-reply to the customer (optional - opens their WhatsApp too)
+        const customerMessage = `*${CONFIG.companyName}* - Quote Request Received ✅\n\n` +
+                               `Hi ${name}, thank you for contacting ${CONFIG.companyName}!\n\n` +
+                               `We have received your request for:\n📋 *${service}*\n📍 *${location}*\n\n` +
+                               `Our team will respond to you within ${CONFIG.responseTime} on this WhatsApp number.\n\n` +
+                               `For urgent inquiries, call us at 📞 ${CONFIG.adminPhone}\n\n` +
+                               `_This is an automated message._`;
+        
+        const customerPhone = formatPhoneForWhatsApp(phone);
+        const customerWhatsappUrl = `https://wa.me/${customerPhone}?text=${encodeURIComponent(customerMessage)}`;
+        
+        // Optional: Open customer WhatsApp in a new tab (comment out if you don't want this)
+        // window.open(customerWhatsappUrl, '_blank');
+        
+        return true;
+    }
+
+    // Form submission handler
+    document.getElementById('whatsappForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        if (!validateForm()) {
+            showToast('Please fill all required fields correctly', 'error');
+            return;
+        }
+        
+        const submitBtn = document.getElementById('submitBtn');
+        const originalText = submitBtn.innerHTML;
+        
+        // Disable button and show loading
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending to WhatsApp...';
+        
+        try {
+            const formData = new FormData(this);
+            await sendToWhatsApp(formData);
+            showToast('✓ Request sent! We will contact you on WhatsApp within 30 minutes', 'success');
+            
+            // Reset form
+            this.reset();
+            
+        } catch (error) {
+            console.error('Error:', error);
+            showToast('Error sending request. Please call us directly at ' + CONFIG.adminPhone, 'error');
+        } finally {
+            // Re-enable button
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+        }
+    });
+
+    // Real-time validation
+    document.getElementById('fullName').addEventListener('input', function() {
+        if (this.value.trim().length >= 2) {
+            document.getElementById('nameError').classList.remove('show');
+            this.classList.remove('error');
+        }
+    });
+    
+    document.getElementById('phoneNumber').addEventListener('input', function() {
+        if (validateKenyanPhone(this.value)) {
+            document.getElementById('phoneError').classList.remove('show');
+            this.classList.remove('error');
+        }
+    });
+    
+    document.getElementById('serviceType').addEventListener('change', function() {
+        if (this.value !== '') {
+            document.getElementById('serviceError').classList.remove('show');
+            this.classList.remove('error');
+        }
+    });
+
+    // ==================== AI ASSISTANT ====================
     const aiResponses = {
-        default: "Thank you for your question! Please call us at 0718 697 501 or WhatsApp us for a detailed response from our team.",
-        "services": "🏗️ Fantech offers: Architectural Designs, BOQ, General Construction, Civil Works, Material Supply, Swimming Pools, Interior Finishing, and Electric Fence Installation. Which service interests you?",
-        "cost": "💰 Construction costs vary by project. For an accurate estimate, please request a free consultation via our contact form or WhatsApp us at 0718 697 501.",
-        "timeline": "⏱️ Project timelines depend on scope. A typical residential house takes 6-9 months, commercial buildings 12-24 months. Contact us for a specific timeline!",
-        "licensed": "✅ Yes! Fantech is fully licensed by the National Construction Authority (NCA) and all our professionals are certified in Kenya.",
-        "quote": "📞 Great! Please fill out the contact form above or WhatsApp us at 0718 697 501 for a free, no-obligation quote within 24 hours.",
-        "hello": "👋 Jambo! Welcome to Fantech Construction. How can I assist with your construction needs today?",
-        "pool": "🏊 Yes! We design and build luxury swimming pools for residential and commercial properties. Request a quote for a custom pool design!",
-        "fence": "⚡ Yes! We install electric security fences with automation. Get a free quote today!",
-        "material": "🚛 We supply premium construction materials including cement, steel, timber, tiles, and finishing materials at competitive prices."
+        default: "Thank you for your question! Please fill out the quote form above or WhatsApp us at 0718 697 501 for a detailed response.",
+        services: "🏗️ Fantech offers: Architectural Designs, BOQ, General Construction, Civil Works, Material Supply, Swimming Pools, Interior Finishing, and Electric Fence Installation. Would you like a quote for any of these?",
+        cost: "💰 Construction costs vary by project. For an accurate estimate, please fill out the quote form above with your project details, and we'll respond within 30 minutes!",
+        timeline: "⏱️ Project timelines depend on scope. A typical residential house takes 6-9 months, commercial buildings 12-24 months. Fill out the form for a personalized timeline!",
+        licensed: "✅ Yes! Fantech is fully licensed by the National Construction Authority (NCA) and all our professionals are certified in Kenya.",
+        quote: "📞 Great! Please fill out the quote form above or WhatsApp us at 0718 697 501 for a free, no-obligation quote within 30 minutes.",
+        hello: "👋 Jambo! Welcome to Fantech Construction. How can I assist with your construction needs today? You can also request a quote using the form above!"
     };
 
     function getAIResponse(question) {
@@ -1240,14 +1516,10 @@
         if (q.includes("timeline") || q.includes("long") || q.includes("duration")) return aiResponses.timeline;
         if (q.includes("license") || q.includes("certified") || q.includes("nca")) return aiResponses.licensed;
         if (q.includes("quote") || q.includes("estimate")) return aiResponses.quote;
-        if (q.includes("pool") || q.includes("swimming")) return aiResponses.pool;
-        if (q.includes("fence") || q.includes("electric")) return aiResponses.fence;
-        if (q.includes("material") || q.includes("supply")) return aiResponses.material;
         if (q.includes("hello") || q.includes("hi") || q.includes("jambo")) return aiResponses.hello;
         return aiResponses.default;
     }
 
-    // AI Chat Functionality
     const aiButton = document.getElementById('aiButton');
     const aiChatWindow = document.getElementById('aiChatWindow');
     const closeAi = document.getElementById('closeAi');
@@ -1300,22 +1572,23 @@
         });
     });
 
-    // Hide Loader
+    // ==================== LOADER ====================
     window.addEventListener('load', function() {
         const loader = document.getElementById('loader');
         loader.classList.add('hidden');
         setTimeout(() => loader.style.display = 'none', 500);
     });
 
-    // Scroll Progress Bar
+    // ==================== SCROLL PROGRESS ====================
     window.addEventListener('scroll', function() {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
-        document.getElementById('progressBar').style.width = scrolled + '%';
+        const progressBar = document.getElementById('progressBar');
+        if (progressBar) progressBar.style.width = scrolled + '%';
     });
 
-    // Sticky Header Shrink
+    // ==================== STICKY HEADER ====================
     window.addEventListener('scroll', function() {
         const navbar = document.getElementById('navbar');
         if (window.scrollY > 100) {
@@ -1325,7 +1598,7 @@
         }
     });
 
-    // Back to Top Button
+    // ==================== BACK TO TOP ====================
     const backToTop = document.getElementById('backToTop');
     window.addEventListener('scroll', function() {
         if (window.scrollY > 300) {
@@ -1334,12 +1607,13 @@
             backToTop.classList.remove('show');
         }
     });
+    
     backToTop.addEventListener('click', function(e) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Live Time (Kenya Time)
+    // ==================== LIVE TIME ====================
     function updateTime() {
         const now = new Date();
         const kenyaTime = now.toLocaleTimeString('en-US', { timeZone: 'Africa/Nairobi', hour: '2-digit', minute: '2-digit', second: '2-digit' });
@@ -1349,7 +1623,7 @@
     updateTime();
     setInterval(updateTime, 1000);
 
-    // Typing Animation
+    // ==================== TYPING ANIMATION ====================
     const words = ["Architectural Designs", "BOQ & Costing", "General Construction", "Civil Works", "Swimming Pools", "Electric Fences", "Interior Finishing"];
     let i = 0;
     let currentWord = "";
@@ -1378,7 +1652,7 @@
     }
     typeEffect();
 
-    // Counter Animation
+    // ==================== COUNTER ANIMATION ====================
     const counters = document.querySelectorAll('.stat-number');
     const speed = 200;
 
@@ -1391,7 +1665,7 @@
                 if (count < target) {
                     count += increment;
                     counter.innerText = Math.ceil(count) + (target === 98 ? '%' : '+');
-                    setTimeout(updateCount, 20);
+                    requestAnimationFrame(updateCount);
                 } else {
                     counter.innerText = target + (target === 98 ? '%' : '+');
                 }
@@ -1400,7 +1674,6 @@
         });
     };
 
-    // Intersection Observer for Counters
     const observerOptions = { threshold: 0.5 };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1410,13 +1683,15 @@
             }
         });
     }, observerOptions);
+    
     document.querySelectorAll('.stats-section').forEach(section => observer.observe(section));
 
-    // Hero Slideshow
+    // ==================== HERO SLIDESHOW ====================
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const indicators = document.querySelectorAll('.indicator');
     const totalSlides = slides.length;
+    let slideshowInterval;
 
     function showSlide(index) {
         slides.forEach((slide, i) => {
@@ -1433,13 +1708,34 @@
         showSlide(currentSlide);
     }
 
+    function startSlideshow() {
+        if (slideshowInterval) clearInterval(slideshowInterval);
+        slideshowInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopSlideshow() {
+        if (slideshowInterval) {
+            clearInterval(slideshowInterval);
+            slideshowInterval = null;
+        }
+    }
+
     indicators.forEach((indicator, index) => {
         indicator.addEventListener('click', () => showSlide(index));
     });
 
-    setInterval(nextSlide, 5000);
+    // Handle page visibility
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopSlideshow();
+        } else {
+            startSlideshow();
+        }
+    });
 
-    // AOS-like animation on scroll
+    startSlideshow();
+
+    // ==================== AOS-LIKE SCROLL ANIMATIONS ====================
     const animatedElements = document.querySelectorAll('[data-aos]');
     const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1449,35 +1745,22 @@
             }
         });
     }, { threshold: 0.1 });
+    
     animatedElements.forEach(el => scrollObserver.observe(el));
 
-    // Form Submission
-    document.getElementById('quoteForm')?.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const form = e.target;
-        const statusDiv = document.getElementById('formStatus');
-        statusDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        statusDiv.style.color = "#FF6600";
-        try {
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
-            });
-            if (response.ok) {
-                statusDiv.innerHTML = '✅ Request sent! We will call you within 24 hours.';
-                statusDiv.style.color = "green";
-                form.reset();
-                setTimeout(() => statusDiv.innerHTML = '', 5000);
-            } else {
-                statusDiv.innerHTML = '❌ Error. Please call 0718 697501 directly.';
-                statusDiv.style.color = "red";
-            }
-        } catch {
-            statusDiv.innerHTML = '❌ Network error. Use WhatsApp or call us.';
-            statusDiv.style.color = "red";
-        }
+    // ==================== SERVICE CARD CLICK ====================
+    document.querySelectorAll('.service-card .service-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const serviceName = this.closest('.service-card').querySelector('h3').innerText;
+            document.getElementById('serviceType').value = serviceName;
+            document.getElementById('serviceType').dispatchEvent(new Event('change'));
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        });
     });
+
+    console.log('🚀 Fantech Construction Website Loaded Successfully!');
+    console.log('📱 WhatsApp Form Integration Active');
 </script>
 </body>
 </html>
