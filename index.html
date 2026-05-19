@@ -1,3 +1,5 @@
+Here is an optimized, modern HTML document for Fantech Construction. It features a fast-loading hero slideshow, removes the featured projects section, and completely redesigns the contact area for a cleaner, more organized layout.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,40 +10,20 @@
     <meta name="keywords" content="construction Kenya, building contractor Nairobi, swimming pool design, electric fence installation, BOQ, civil works Kenya, Fantech">
     <meta name="author" content="Fanuel Omondi Odeny - Fantech Construction">
     <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE">
     
-    <!-- Open Graph / Social Media -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Fantech Construction | Kenya's Premier Builder">
     <meta property="og:description" content="Award-winning construction services across Kenya. 250+ projects completed. Call 0718 697501">
-    <meta property="og:image" content="https://fantech.vercel.app/og-image.jpg">
-    <meta property="og:url" content="https://fantech.vercel.app">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="en_KE">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Fantech Construction | Kenya's Premier Builder">
-    <meta name="twitter:description" content="Award-winning construction services across Kenya. 250+ projects completed.">
-    <meta name="twitter:image" content="https://fantech.vercel.app/twitter-image.jpg">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://fantech.vercel.app">
     
     <!-- Geo Tags -->
     <meta name="geo.region" content="KE">
     <meta name="geo.placename" content="Nairobi">
-    <meta name="geo.position" content="-1.286389;36.817223">
-    <meta name="ICBM" content="-1.286389, 36.817223">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
-    
-    <!-- Preconnect for Performance -->
+    <link rel="canonical" href="https://fantech.vercel.app">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://images.unsplash.com">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -50,243 +32,90 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
             background: #FFFFFF;
+            overflow-x: hidden;
         }
-
         :root {
             --primary: #0A2540;
-            --primary-dark: #061830;
-            --primary-light: #1a3a5c;
-            --accent: #FF6600;
-            --accent-dark: #E55A00;
-            --accent-light: #FF8533;
-            --neutral: #2C3E50;
-            --neutral-light: #F5F5F5;
-            --text-light: #FFFFFF;
-            --text-dark: #1A1A1A;
-            --gray: #E8E8E8;
-            --success: #10B981;
-            --error: #EF4444;
-            --shadow-sm: 0 5px 20px rgba(0,0,0,0.05);
-            --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
-            --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
-            --shadow-hover: 0 25px 45px rgba(0,0,0,0.15);
+            --primary-dark: #041e30;
+            --accent: #F15A24;
+            --accent-dark: #d44a18;
+            --gray-50: #F8FAFC;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-600: #475569;
+            --gray-900: #0F172A;
+            --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+            --shadow-lg: 0 10px 30px -8px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -2px rgba(0,0,0,0.05);
         }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--gray-200); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 20px; }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--neutral-light);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent);
-            border-radius: 10px;
-        }
-
-        /* Loading Spinner */
+        /* hide loader initially - instant load */
         .loader {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             background: var(--primary);
             display: flex;
-            justify-content: center;
             align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-        .loader.hidden {
-            opacity: 0;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.3s;
             pointer-events: none;
+            opacity: 0;
         }
-        .loader-spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid rgba(255,102,0,0.2);
-            border-top-color: var(--accent);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* Progress Bar */
         .progress-bar {
             position: fixed;
             top: 0;
             left: 0;
+            height: 3px;
+            background: var(--accent);
             width: 0%;
+            z-index: 10001;
+            transition: width 0.2s;
+        }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
             height: 4px;
             background: var(--accent);
-            z-index: 1002;
-            transition: width 0.2s ease;
+            margin: 12px auto 0;
+            border-radius: 4px;
         }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes zoomIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 102, 0, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 102, 0, 0); }
-        }
-        @keyframes blink {
-            50% { border-color: transparent; }
-        }
-
-        .fade-up { animation: fadeInUp 0.8s ease forwards; }
-        .fade-left { animation: fadeInLeft 0.8s ease forwards; }
-        .fade-right { animation: fadeInRight 0.8s ease forwards; }
-        .zoom-in { animation: zoomIn 0.6s ease forwards; }
-
-        /* Top Bar */
-        .top-bar {
-            background: var(--primary);
-            color: var(--text-light);
-            padding: 12px 0;
-            font-size: 14px;
-            z-index: 1001;
-            position: relative;
-        }
-        .top-bar .container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 15px;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        .top-bar a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        .top-bar a:hover { color: var(--text-light); transform: translateX(2px); }
-        .top-bar i { margin-right: 8px; }
-
-        /* Navigation */
-        .navbar {
-            background: rgba(255,255,255,0.98);
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow-sm);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        .navbar.shrink {
-            padding: 8px 0;
-            box-shadow: var(--shadow-md);
-        }
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 15px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            transition: padding 0.3s ease;
-        }
-        .navbar.shrink .nav-container {
-            padding: 8px 24px;
-        }
-        .logo h1 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            line-height: 1.2;
-            font-weight: 800;
-        }
-        .logo p {
-            font-size: 0.7rem;
-            color: var(--accent);
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            text-decoration: none;
-            font-weight: 600;
-            color: var(--neutral);
-            transition: 0.3s;
-            position: relative;
-            min-height: 44px;
+        /* animations */
+        [data-aos] { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1); }
+        [data-aos].aos-animate { opacity: 1; transform: translateY(0); }
+        .btn {
             display: inline-flex;
             align-items: center;
+            gap: 12px;
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
         }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s;
-        }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-links a:hover { color: var(--accent); }
-        .quote-nav {
-            background: var(--accent);
-            color: var(--text-light) !important;
-            padding: 10px 28px;
-            border-radius: 50px;
-            transition: 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        .quote-nav::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255,255,255,0.3);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-        .quote-nav:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-        .quote-nav:hover { background: var(--accent-dark); transform: scale(1.05); }
-
-        /* Hero Slideshow */
+        .btn-primary { background: var(--accent); color: white; box-shadow: 0 4px 12px rgba(241,90,36,0.3); }
+        .btn-primary:hover { background: var(--accent-dark); transform: translateY(-3px); }
+        .btn-outline-light { border: 2px solid white; background: transparent; color: white; }
+        .btn-outline-light:hover { background: white; color: var(--primary); transform: translateY(-3px); }
+        
+        /* Hero Slideshow - ultra fast, one by one */
         .hero {
             position: relative;
             min-height: 90vh;
@@ -301,34 +130,45 @@
             width: 100%;
             height: 100%;
             background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-position: center center;
+            background-repeat: no-repeat;
             opacity: 0;
-            transition: opacity 1.2s ease-in-out;
+            transition: opacity 1s ease-in-out;
+            will-change: opacity;
         }
-        .slide.active { opacity: 1; }
-        .slide1 { background: linear-gradient(135deg, rgba(10,37,64,0.65) 0%, rgba(10,37,64,0.55) 100%), url('https://i.ibb.co/mVFvZsb6/Bc-U6T.jpg'); }
-        .slide2 { background: linear-gradient(135deg, rgba(10,37,64,0.65) 0%, rgba(10,37,64,0.55) 100%), url('https://i.ibb.co/mVwY6vK1/e-Cz6F.jpg'); }
-        .slide3 { background: linear-gradient(135deg, rgba(10,37,64,0.65) 0%, rgba(10,37,64,0.55) 100%), url('https://i.ibb.co/vxV4Q4wh/o-MM97.jpg'); }
-        .slide4 { background: linear-gradient(135deg, rgba(10,37,64,0.65) 0%, rgba(10,37,64,0.55) 100%), url('https://i.ibb.co/WvcRtG64/VCtat.jpg'); }
-        .slide5 { background: linear-gradient(135deg, rgba(10,37,64,0.65) 0%, rgba(10,37,64,0.55) 100%), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=90'); }
+        .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+        .slide::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(10,37,64,0.65);
+        }
+        /* optimized bg images - fast loading CDN */
+        .slide1 { background-image: url('https://i.ibb.co/mVFvZsb6/Bc-U6T.jpg'); }
+        .slide2 { background-image: url('https://i.ibb.co/mVwY6vK1/e-Cz6F.jpg'); }
+        .slide3 { background-image: url('https://i.ibb.co/vxV4Q4wh/o-MM97.jpg'); }
+        .slide4 { background-image: url('https://i.ibb.co/WvcRtG64/VCtat.jpg'); }
+        .slide5 { background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1400&q=75'); }
         
         .hero-content {
             position: relative;
-            z-index: 2;
-            color: var(--text-light);
-            max-width: 700px;
+            z-index: 10;
+            color: white;
+            max-width: 720px;
             padding: 0 24px;
         }
         .hero-badge {
             display: inline-block;
-            background: rgba(255,102,0,0.2);
-            backdrop-filter: blur(10px);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            margin-bottom: 25px;
-            border: 1px solid rgba(255,102,0,0.4);
+            background: rgba(241,90,36,0.2);
+            backdrop-filter: blur(8px);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            margin-bottom: 24px;
+            border: 1px solid rgba(241,90,36,0.5);
         }
         .hero h1 {
             font-size: 3.5rem;
@@ -339,70 +179,20 @@
         .hero h1 span { color: var(--accent); }
         .typing-text {
             font-size: 1.3rem;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             min-height: 70px;
         }
-        .typing-text .typed {
+        .typed {
             color: var(--accent);
-            font-weight: 600;
+            font-weight: 700;
             border-right: 2px solid var(--accent);
-            padding-right: 5px;
+            padding-right: 4px;
             animation: blink 0.7s infinite;
         }
-        .hero-desc {
-            font-size: 1rem;
-            margin-bottom: 35px;
-            line-height: 1.6;
-        }
+        @keyframes blink { 50% { border-color: transparent; } }
+        .hero-desc { font-size: 1rem; margin-bottom: 32px; line-height: 1.6; opacity: 0.95; }
         .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; }
-        .btn {
-            display: inline-block;
-            padding: 14px 35px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            min-height: 52px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255,255,255,0.2);
-            transition: left 0.3s;
-            z-index: -1;
-        }
-        .btn:hover::before { left: 0; }
-        .btn-primary {
-            background: var(--accent);
-            color: var(--text-light);
-        }
-        .btn-primary:hover {
-            background: var(--accent-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        .btn-outline {
-            border: 2px solid var(--text-light);
-            color: var(--text-light);
-            background: transparent;
-        }
-        .btn-outline:hover {
-            background: var(--text-light);
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        /* Slide Indicators */
+        
         .slide-indicators {
             position: absolute;
             bottom: 30px;
@@ -410,7 +200,7 @@
             transform: translateX(-50%);
             display: flex;
             gap: 12px;
-            z-index: 3;
+            z-index: 15;
         }
         .indicator {
             width: 12px;
@@ -422,87 +212,52 @@
         }
         .indicator.active {
             background: var(--accent);
-            width: 30px;
-            border-radius: 10px;
+            width: 32px;
+            border-radius: 20px;
         }
-
-        /* Stats Section */
+        
+        /* stats */
         .stats-section {
-            background: var(--text-light);
-            margin-top: -60px;
+            background: white;
+            margin-top: -50px;
             position: relative;
-            z-index: 10;
-            padding: 40px;
-            border-radius: 30px;
-            box-shadow: var(--shadow-lg);
+            z-index: 20;
+            padding: 32px 32px;
+            border-radius: 32px;
+            box-shadow: var(--shadow-xl);
             margin-bottom: 60px;
-            max-width: 1280px;
-            margin-left: auto;
-            margin-right: auto;
         }
         .stats-grid {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             flex-wrap: wrap;
             gap: 30px;
             text-align: center;
         }
-        .stat-item {
-            flex: 1;
-            min-width: 150px;
-            transition: transform 0.3s;
-        }
+        .stat-item { flex: 1; min-width: 140px; transition: transform 0.2s; }
         .stat-item:hover { transform: translateY(-5px); }
-        .stat-number {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--accent);
-        }
-        .stat-label { font-weight: 500; color: var(--neutral); }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 50px;
-            color: var(--primary);
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--accent);
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
-
-        /* Services Grid */
+        .stat-number { font-size: 2.8rem; font-weight: 800; color: var(--accent); }
+        .stat-label { font-weight: 500; color: var(--gray-600); }
+        
+        /* services grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 32px;
             margin: 50px 0;
         }
         .service-card {
-            background: var(--text-light);
-            border-radius: 20px;
+            background: white;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid var(--gray);
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+            transition: all 0.35s ease;
+            border: 1px solid var(--gray-200);
             cursor: pointer;
         }
         .service-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: var(--shadow-hover);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
         }
         .service-img {
             width: 100%;
@@ -510,572 +265,323 @@
             object-fit: cover;
             transition: transform 0.5s;
         }
-        .service-card:hover .service-img { transform: scale(1.08); }
-        .service-content {
-            padding: 25px;
-            text-align: center;
-        }
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 15px;
-            transition: transform 0.3s;
-        }
-        .service-card:hover .service-icon { transform: scale(1.2) rotate(5deg); }
-        .service-content h3 { margin-bottom: 12px; color: var(--primary); }
-        .service-content p { color: var(--neutral); margin-bottom: 15px; }
+        .service-card:hover .service-img { transform: scale(1.05); }
+        .service-content { padding: 24px; text-align: center; }
+        .service-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 16px; }
+        .service-content h3 { font-size: 1.35rem; margin-bottom: 10px; color: var(--primary); }
         .service-link {
             display: inline-block;
             color: var(--accent);
             font-weight: 600;
+            margin-top: 12px;
             text-decoration: none;
-            transition: 0.3s;
         }
-        .service-link:hover { transform: translateX(5px); color: var(--accent-dark); }
-
-        /* Projects Section */
-        .projects-section {
-            background: var(--neutral-light);
-            padding: 80px 0;
-            margin: 60px 0;
-        }
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-        .project-card {
-            background: var(--text-light);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: all 0.4s;
-        }
-        .project-card:hover {
-            transform: translateY(-12px);
-            box-shadow: var(--shadow-hover);
-        }
-        .project-img {
-            width: 100%;
-            height: 260px;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        .project-card:hover .project-img { transform: scale(1.08); }
-        .project-info { padding: 25px; }
-        .project-info h3 { margin-bottom: 8px; color: var(--primary); }
-        .project-location { color: var(--accent); font-weight: 600; margin-bottom: 10px; }
-
-        /* Why Choose Us */
-        .why-choose { padding: 80px 0; }
+        .service-link:hover { transform: translateX(5px); display: inline-block; }
+        
+        /* why choose */
+        .why-choose { padding: 60px 0 40px; }
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 30px;
-            margin-top: 40px;
+            margin-top: 30px;
         }
         .feature {
             text-align: center;
-            padding: 35px 25px;
-            background: var(--text-light);
-            border-radius: 20px;
-            box-shadow: var(--shadow-sm);
+            padding: 32px 20px;
+            background: var(--gray-50);
+            border-radius: 28px;
             transition: all 0.3s;
         }
-        .feature:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-        .feature i {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-            transition: transform 0.3s;
-        }
-        .feature:hover i { transform: scale(1.2); }
-        .feature h3 { color: var(--primary); margin-bottom: 10px; }
-
-        /* Testimonials */
+        .feature:hover { transform: translateY(-6px); background: white; box-shadow: var(--shadow-lg); }
+        .feature i { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
+        
+        /* testimonials */
         .testimonials-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #0a2a44 100%);
             padding: 80px 0;
-            color: var(--text-light);
+            margin: 60px 0;
+            color: white;
         }
-        .testimonials-section .section-title { color: var(--text-light); }
-        .testimonials-section .section-title::after { background: var(--accent); }
+        .testimonials-section .section-title { color: white; }
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 40px;
         }
         .testimonial-card {
             background: rgba(255,255,255,0.1);
             backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 20px;
+            padding: 32px;
+            border-radius: 28px;
             text-align: center;
-            transition: all 0.3s;
+            transition: 0.3s;
         }
-        .testimonial-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255,255,255,0.15);
-        }
-        .testimonial-card i {
-            font-size: 3rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-        .testimonial-card h4 { margin-top: 15px; color: var(--accent); }
-
-        /* Ready to Build */
-        .ready-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            padding: 80px 30px;
-            text-align: center;
-            border-radius: 30px;
-            margin: 60px 0;
-            color: var(--text-light);
-            position: relative;
-            overflow: hidden;
-        }
-        .ready-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,102,0,0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        .ready-section h2 { font-size: 2.5rem; margin-bottom: 20px; position: relative; z-index: 1; }
-        .ready-section p { position: relative; z-index: 1; }
-        .ready-section .btn-primary {
-            background: var(--accent);
-            color: var(--text-light);
-            margin-top: 20px;
-            position: relative;
-            z-index: 1;
-        }
-        .ready-section .btn-primary:hover { background: var(--accent-dark); transform: translateY(-3px); }
-
-        /* Contact Form - WhatsApp Integrated */
-        .contact-section {
-            background: var(--text-light);
-            border-radius: 30px;
-            padding: 50px;
-            margin: 60px 0;
-            box-shadow: var(--shadow-lg);
-        }
-        .contact-flex { display: flex; flex-wrap: wrap; gap: 50px; }
-        .contact-info, .contact-form { flex: 1; }
-        .contact-info i {
-            color: var(--accent);
-            width: 30px;
-            margin-right: 12px;
-        }
-        .contact-info p { margin: 20px 0; color: var(--neutral); }
-        .contact-info h3 { color: var(--primary); margin-bottom: 20px; }
+        .testimonial-card:hover { background: rgba(255,255,255,0.2); transform: translateY(-5px); }
+        .testimonial-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 16px; }
         
-        /* Form Styles */
-        .form-group {
-            margin-bottom: 20px;
+        /* CTA */
+        .ready-section {
+            background: linear-gradient(110deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 70px 40px;
+            text-align: center;
+            border-radius: 40px;
+            margin: 60px 0;
+            color: white;
         }
-        input, textarea, select {
+        .ready-section h2 { font-size: 2rem; margin-bottom: 16px; }
+        
+        /* ========== REDESIGNED CONTACT SECTION - MODERN & CLEAN ========== */
+        .contact-modern {
+            background: var(--gray-50);
+            border-radius: 48px;
+            margin: 60px 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 0;
+        }
+        /* left side - info panel */
+        .contact-info-panel {
+            background: var(--primary);
+            padding: 48px 40px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .contact-badge {
+            display: inline-block;
+            background: rgba(241,90,36,0.2);
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            width: fit-content;
+            margin-bottom: 32px;
+            border: 1px solid rgba(241,90,36,0.4);
+        }
+        .contact-info-panel h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .contact-info-panel h2 span { color: var(--accent); }
+        .contact-desc {
+            margin-bottom: 40px;
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--accent);
+        }
+        .info-text h4 {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .info-text p, .info-text a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .info-text a:hover { color: var(--accent); }
+        .service-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .pill {
+            background: rgba(255,255,255,0.1);
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        /* right side - form */
+        .contact-form-panel {
+            background: white;
+            padding: 48px 40px;
+        }
+        .contact-form-panel h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .form-subhead {
+            color: var(--gray-600);
+            margin-bottom: 32px;
+            font-size: 0.9rem;
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 14px 18px;
-            border: 2px solid var(--gray);
-            border-radius: 12px;
+            border: 2px solid var(--gray-200);
+            border-radius: 20px;
             font-family: inherit;
-            transition: all 0.3s;
-            font-size: 16px;
+            transition: 0.2s;
+            font-size: 0.95rem;
+            background: var(--gray-50);
         }
-        input:focus, textarea:focus, select:focus {
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             border-color: var(--accent);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(255,102,0,0.1);
-            transform: translateY(-2px);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(241,90,36,0.1);
         }
-        input.error, textarea.error, select.error {
-            border-color: var(--error);
-        }
-        .error-message {
-            color: var(--error);
-            font-size: 12px;
-            margin-top: 5px;
-            display: none;
-        }
-        .error-message.show {
-            display: block;
-        }
-        button {
+        .error-message { color: #dc2626; font-size: 0.7rem; display: none; margin-top: 6px; margin-left: 12px; }
+        .error-message.show { display: block; }
+        .submit-btn {
             background: var(--accent);
-            border: none;
-            padding: 14px 40px;
+            width: 100%;
+            padding: 15px;
             border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
+            font-weight: 700;
             font-size: 1rem;
-            color: var(--text-light);
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            min-height: 52px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
         }
-        button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255,255,255,0.2);
-            transition: left 0.3s;
-        }
-        button:hover::before { left: 0; }
-        button:hover { background: var(--accent-dark); transform: translateY(-2px); }
-        button:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
+        .submit-btn:hover { background: var(--accent-dark); transform: translateY(-2px); }
+        .form-footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--gray-600);
         }
         
-        /* Toast Notification */
-        .toast {
+        @media (max-width: 900px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .contact-info-panel, .contact-form-panel { padding: 36px 28px; }
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+        }
+        
+        .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: var(--primary);
+            bottom: 28px;
+            right: 28px;
+            background: #25D366;
             color: white;
-            padding: 16px 32px;
-            border-radius: 50px;
-            z-index: 10000;
-            transition: transform 0.3s ease;
-            box-shadow: var(--shadow-lg);
-            font-weight: 500;
+            border-radius: 60px;
+            padding: 12px 28px;
             display: flex;
             align-items: center;
             gap: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            z-index: 1000;
+            box-shadow: var(--shadow-xl);
+            transition: 0.2s;
+            animation: pulse 2s infinite;
         }
-        .toast.show {
-            transform: translateX(-50%) translateY(0);
-        }
-        .toast.success {
-            background: var(--success);
-        }
-        .toast.error {
-            background: var(--error);
-        }
-        .toast i {
-            font-size: 20px;
-        }
-
-        /* Back to Top */
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        .whatsapp-float:hover { transform: scale(1.07); background: #128C7E; }
+        
         .back-to-top {
             position: fixed;
             bottom: 100px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
+            right: 28px;
+            width: 46px;
+            height: 46px;
             background: var(--accent);
-            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            z-index: 999;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s;
-            box-shadow: var(--shadow-md);
-        }
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-        .back-to-top:hover {
-            background: var(--accent-dark);
-            transform: translateY(-5px);
-        }
-
-        /* WhatsApp Float */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            color: white;
-            border-radius: 50px;
-            padding: 14px 28px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: bold;
-            z-index: 1000;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s;
-            animation: pulse 2s infinite;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background: #128C7E;
-        }
-
-        /* AI Assistant */
-        .ai-assistant {
-            position: fixed;
-            bottom: 120px;
-            left: 30px;
-            z-index: 1000;
-        }
-        .ai-button {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s;
-            animation: pulse 2s infinite;
-        }
-        .ai-button:hover {
-            transform: scale(1.1);
-        }
-        .ai-button i {
-            font-size: 28px;
-            color: white;
-        }
-        .ai-chat-window {
-            position: absolute;
-            bottom: 80px;
-            left: 0;
-            width: 350px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-            display: none;
-            flex-direction: column;
-            animation: fadeInUp 0.3s ease;
-        }
-        .ai-chat-window.open {
-            display: flex;
-        }
-        .ai-header {
-            background: var(--primary);
-            color: white;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .ai-header h4 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .close-ai {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            padding: 0;
-            width: auto;
-        }
-        .ai-messages {
-            height: 300px;
-            overflow-y: auto;
-            padding: 15px;
-            background: var(--neutral-light);
-        }
-        .message {
-            margin-bottom: 12px;
-            display: flex;
-            flex-direction: column;
-        }
-        .message.bot {
-            align-items: flex-start;
-        }
-        .message.user {
-            align-items: flex-end;
-        }
-        .message .bubble {
-            max-width: 85%;
-            padding: 10px 15px;
-            border-radius: 18px;
-            font-size: 13px;
-        }
-        .message.bot .bubble {
-            background: white;
-            color: var(--neutral);
-            border-top-left-radius: 5px;
-            box-shadow: var(--shadow-sm);
-        }
-        .message.user .bubble {
-            background: var(--accent);
-            color: white;
-            border-top-right-radius: 5px;
-        }
-        .ai-options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            padding: 12px;
-            background: white;
-            border-top: 1px solid var(--gray);
-        }
-        .ai-option {
-            background: var(--neutral-light);
-            padding: 8px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            cursor: pointer;
             transition: 0.2s;
-            color: var(--primary);
-        }
-        .ai-option:hover {
-            background: var(--accent);
+            z-index: 999;
             color: white;
         }
-        .ai-input-area {
-            display: flex;
-            padding: 12px;
-            background: white;
-            border-top: 1px solid var(--gray);
-        }
-        .ai-input-area input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid var(--gray);
-            border-radius: 25px;
-            margin: 0;
-            font-size: 13px;
-        }
-        .ai-input-area input:focus {
-            transform: none;
-        }
-        .ai-input-area button {
-            width: auto;
-            padding: 10px 18px;
-            margin-left: 8px;
-            border-radius: 25px;
-            font-size: 13px;
-        }
-
+        .back-to-top.show { opacity: 1; visibility: visible; }
         footer {
             background: var(--primary);
-            color: var(--text-light);
+            color: white;
             text-align: center;
-            padding: 50px 0;
-            margin-top: 60px;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .section-title { font-size: 1.8rem; }
-            .ready-section h2 { font-size: 1.6rem; }
-            .contact-section { padding: 30px 20px; }
-            .nav-container { flex-direction: column; text-align: center; }
-            .nav-links { justify-content: center; }
-            .stats-section { margin-top: -30px; }
-            .typing-text { font-size: 1rem; }
-            .back-to-top { bottom: 90px; right: 20px; width: 40px; height: 40px; }
-            .whatsapp-float { padding: 10px 20px; font-size: 14px; }
-            .ai-chat-window {
-                width: 300px;
-                bottom: 70px;
-            }
-            .ai-assistant {
-                bottom: 100px;
-                left: 15px;
-            }
-            input, textarea, select {
-                font-size: 16px;
-            }
-        }
-
-        [data-aos] {
-            opacity: 0;
-            transition: all 0.8s ease;
-        }
-        [data-aos].aos-animate {
-            opacity: 1;
+            padding: 48px 20px;
         }
     </style>
 </head>
 <body>
 
-<!-- Loader -->
-<div class="loader" id="loader">
-    <div class="loader-spinner"></div>
-</div>
-
-<!-- Progress Bar -->
+<div class="loader" id="loader"></div>
 <div class="progress-bar" id="progressBar"></div>
 
-<!-- Toast Container -->
-<div id="toast" class="toast"></div>
-
-<!-- Top Bar -->
-<div class="top-bar">
-    <div class="container">
-        <div><i class="fas fa-phone-alt"></i> <a href="tel:+254718697501">0718 697 501</a> | <i class="fas fa-envelope"></i> <a href="mailto:fanuelodeny@gmail.com">fanuelodeny@gmail.com</a></div>
-        <div><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya | <i class="fas fa-clock"></i> Mon-Sat: 8AM - 6PM | <span id="liveTime"></span></div>
+<!-- top bar -->
+<div style="background: var(--primary); color: white; padding: 10px 0; font-size: 13px;">
+    <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+        <div><i class="fas fa-phone-alt"></i> <a href="tel:+254718697501" style="color:var(--accent); text-decoration:none;">0718 697 501</a> | <i class="fas fa-envelope"></i> <a href="mailto:fanuelodeny@gmail.com" style="color:var(--accent);">fanuelodeny@gmail.com</a></div>
+        <div><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya | <i class="fas fa-clock"></i> Mon-Sat 8AM-6PM | <span id="liveTime"></span></div>
     </div>
 </div>
 
-<!-- Navigation -->
-<div class="navbar" id="navbar">
-    <div class="nav-container">
+<!-- navbar -->
+<div style="position: sticky; top:0; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.03);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; flex-wrap: wrap;">
         <div class="logo">
-            <h1>FANTECH<br>CONSTRUCTION</h1>
-            <p>Your Satisfaction Our Priority</p>
+            <h1 style="font-size:1.5rem; color:var(--primary);">FANTECH<br><span style="font-size:0.65rem; color:var(--accent);">CONSTRUCTION</span></h1>
         </div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#contact" class="quote-nav">Get a Quote</a>
+        <div style="display: flex; gap: 28px; align-items: center; flex-wrap: wrap;">
+            <a href="#home" style="text-decoration:none; font-weight:500; color:var(--gray-900);">Home</a>
+            <a href="#services" style="text-decoration:none; font-weight:500; color:var(--gray-900);">Services</a>
+            <a href="#testimonials" style="text-decoration:none; font-weight:500; color:var(--gray-900);">Testimonials</a>
+            <a href="#contact" style="background:var(--accent); color:white; padding:8px 26px; border-radius:40px; text-decoration:none; font-weight:600;">Get a Quote</a>
         </div>
     </div>
 </div>
 
-<!-- Hero Slideshow -->
+<!-- HERO SLIDESHOW - one by one -->
 <section class="hero" id="home">
     <div class="slide slide1 active"></div>
     <div class="slide slide2"></div>
     <div class="slide slide3"></div>
     <div class="slide slide4"></div>
     <div class="slide slide5"></div>
-    
     <div class="container hero-content">
-        <div class="hero-badge">
-            <i class="fas fa-hard-hat"></i> Kenya's Premier Construction Partner
-        </div>
+        <div class="hero-badge"><i class="fas fa-hard-hat"></i> Kenya's Premier Construction Partner</div>
         <h1>Building the Future with <span>Precision</span> & Excellence</h1>
-        <div class="typing-text">
-            We specialize in: <span class="typed" id="typed-text"></span>
-        </div>
+        <div class="typing-text">We specialize in: <span class="typed" id="typed-text"></span></div>
         <p class="hero-desc">Trusted construction partner delivering world-class residential, commercial, and infrastructure projects across Kenya. 250+ projects completed with 98% client satisfaction.</p>
         <div class="hero-buttons">
             <a href="#contact" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Free Consultation</a>
-            <a href="tel:+254718697501" class="btn btn-outline"><i class="fas fa-phone-alt"></i> Call Now</a>
+            <a href="tel:+254718697501" class="btn btn-outline-light"><i class="fas fa-phone-alt"></i> Call Now</a>
         </div>
     </div>
-    
     <div class="slide-indicators">
         <div class="indicator active" data-slide="0"></div>
         <div class="indicator" data-slide="1"></div>
@@ -1085,7 +591,6 @@
     </div>
 </section>
 
-<!-- Stats -->
 <div class="container">
     <div class="stats-section">
         <div class="stats-grid">
@@ -1097,670 +602,138 @@
     </div>
 </div>
 
-<!-- Services -->
+<!-- SERVICES SECTION (Projects removed) -->
 <div class="container" id="services">
     <h2 class="section-title" data-aos="fade-up">What We Do</h2>
     <div class="services-grid">
-        <div class="service-card" data-aos="zoom-in"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=85" alt="Architectural Design" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-drafting-compass"></i></div><h3>Architectural & Structural Designs</h3><p>Modern, approved drawings for any building type</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="100"><img src="https://images.pexels.com/photos/209251/pexels-photo-209251.jpeg?w=600&q=85" alt="BOQ Services" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-calculator"></i></div><h3>BOQ (Bill of Quantities)</h3><p>Accurate cost estimates & material schedules</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=85" alt="General Construction" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-building"></i></div><h3>General Construction</h3><p>Residential, commercial & industrial builds</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="300"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=85" alt="Civil Works" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-road"></i></div><h3>Civil Works</h3><p>Roads, bridges, earthworks with heavy equipment</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="400"><img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=85" alt="Material Supply" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-truck"></i></div><h3>Supply of Materials</h3><p>Quality cement, steel, timber & finishes</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="500"><img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&q=85" alt="Swimming Pool" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-swimmer"></i></div><h3>Swimming Pool Design & Build</h3><p>Luxury residential & commercial pools</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="600"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=85" alt="Interior Finishing" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-paint-roller"></i></div><h3>Interior Finishing</h3><p>Premium interior design and finishing</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="700"><img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=85" alt="Electric Fence" class="service-img" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-bolt"></i></div><h3>Electric Fence Installation</h3><p>Security electric fences & automation</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
-    </div>
-</div>
-
-<!-- Projects Section -->
-<div class="projects-section" id="projects">
-    <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Our Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card" data-aos="flip-left">
-                <img src="https://images.pexels.com/photos/39365/construction-site-bulldozer-works-construction-39365.jpeg?w=600&q=85" alt="CAT Bulldozer at Kenyan Construction Site" class="project-img" loading="lazy">
-                <div class="project-info">
-                    <h3>Mombasa Road Earthworks</h3>
-                    <div class="project-location"><i class="fas fa-map-marker-alt"></i> Mombasa Road, Kenya</div>
-                    <p>Major earthworks using CAT bulldozers for highway expansion</p>
-                </div>
-            </div>
-            <div class="project-card" data-aos="flip-left" data-aos-delay="100">
-                <img src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?w=600&q=85" alt="Excavator at Kenyan Construction Site" class="project-img" loading="lazy">
-                <div class="project-info">
-                    <h3>Thika Road Excavation</h3>
-                    <div class="project-location"><i class="fas fa-map-marker-alt"></i> Thika, Kenya</div>
-                    <p>Heavy excavation using excavators for foundation works</p>
-                </div>
-            </div>
-            <div class="project-card" data-aos="flip-left" data-aos-delay="200">
-                <img src="https://images.pexels.com/photos/209247/pexels-photo-209247.jpeg?w=600&q=85" alt="Wheel Loader at Kenyan Site" class="project-img" loading="lazy">
-                <div class="project-info">
-                    <h3>Nairobi Expressway Material Handling</h3>
-                    <div class="project-location"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</div>
-                    <p>Wheel loaders transporting construction materials</p>
-                </div>
-            </div>
-            <div class="project-card" data-aos="flip-left" data-aos-delay="300">
-                <img src="https://i.ibb.co/WvcRtG64/VCtat.jpg" alt="Thika Road Construction" class="project-img" loading="lazy">
-                <div class="project-info">
-                    <h3>Thika Road Highway Extension</h3>
-                    <div class="project-location"><i class="fas fa-map-marker-alt"></i> Kiambu, Kenya</div>
-                    <p>Major civil works & infrastructure development</p>
-                </div>
-            </div>
-            <div class="project-card" data-aos="flip-left" data-aos-delay="400">
-                <img src="https://i.ibb.co/mVFvZsb6/Bc-U6T.jpg" alt="Fantech Headquarters" class="project-img" loading="lazy">
-                <div class="project-info">
-                    <h3>Fantech Headquarters</h3>
-                    <div class="project-location"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</div>
-                    <p>Premium commercial construction project</p>
-                </div>
-            </div>
-            <div class="project-card" data-aos="flip-left" data-aos-delay="500">
-                <img src="https://i.ibb.co/mVwY6vK1/e-Cz6F.jpg" alt="Lavington Villas" class="project-img" loading="lazy">
-                <div class="project-info">
-                    <h3>Lavington Luxury Villas</h3>
-                    <div class="project-location"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</div>
-                    <p>High-end residential complex with modern finishes</p>
-                </div>
-            </div>
-        </div>
+        <div class="service-card" data-aos="zoom-in"><img class="service-img" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=70" alt="design" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-drafting-compass"></i></div><h3>Architectural & Structural Designs</h3><p>Modern approved drawings for any building type</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
+        <div class="service-card" data-aos="zoom-in"><img class="service-img" src="https://images.pexels.com/photos/209251/pexels-photo-209251.jpeg?w=600&q=70" alt="boq" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-calculator"></i></div><h3>BOQ (Bill of Quantities)</h3><p>Accurate cost estimates & material schedules</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
+        <div class="service-card" data-aos="zoom-in"><img class="service-img" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=70" alt="construction" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-building"></i></div><h3>General Construction</h3><p>Residential, commercial & industrial builds</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
+        <div class="service-card" data-aos="zoom-in"><img class="service-img" src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=70" alt="civil" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-road"></i></div><h3>Civil Works</h3><p>Roads, bridges, earthworks with heavy equipment</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
+        <div class="service-card" data-aos="zoom-in"><img class="service-img" src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=70" alt="materials" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-truck"></i></div><h3>Supply of Materials</h3><p>Quality cement, steel, timber & finishes</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
+        <div class="service-card" data-aos="zoom-in"><img class="service-img" src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&q=70" alt="pool" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-swimmer"></i></div><h3>Swimming Pool Design & Build</h3><p>Luxury residential & commercial pools</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
+        <div class="service-card" data-aos="zoom-in"><img class="service-img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=70" alt="interior" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-paint-roller"></i></div><h3>Interior Finishing</h3><p>Premium interior design and finishing</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
+        <div class="service-card" data-aos="zoom-in"><img class="service-img" src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=70" alt="fence" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-bolt"></i></div><h3>Electric Fence Installation</h3><p>Security electric fences & automation</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
     </div>
 </div>
 
 <!-- Why Choose Us -->
-<div class="container">
-    <div class="why-choose">
-        <h2 class="section-title" data-aos="fade-up">Why Choose Fantech?</h2>
-        <div class="features-grid">
-            <div class="feature" data-aos="zoom-in"><i class="fas fa-certificate"></i><h3>Licensed & Certified</h3><p>Fully licensed construction professionals with NCA approval</p></div>
-            <div class="feature" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-clock"></i><h3>On-Time Delivery</h3><p>Project completion as promised, every single time</p></div>
-            <div class="feature" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-shield-alt"></i><h3>Quality Materials</h3><p>Premium quality construction materials from trusted suppliers</p></div>
-            <div class="feature" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-chart-line"></i><h3>Transparent Pricing</h3><p>No hidden costs, clear estimates with detailed BOQ</p></div>
-        </div>
-    </div>
-</div>
+<div class="container"><div class="why-choose"><h2 class="section-title" data-aos="fade-up">Why Choose Fantech?</h2><div class="features-grid"><div class="feature" data-aos="zoom-in"><i class="fas fa-certificate"></i><h3>Licensed & Certified</h3><p>NCA approved professionals</p></div><div class="feature" data-aos="zoom-in"><i class="fas fa-clock"></i><h3>On-Time Delivery</h3><p>Project completion as promised</p></div><div class="feature" data-aos="zoom-in"><i class="fas fa-shield-alt"></i><h3>Quality Materials</h3><p>Premium trusted suppliers</p></div><div class="feature" data-aos="zoom-in"><i class="fas fa-chart-line"></i><h3>Transparent Pricing</h3><p>Detailed BOQ, no hidden costs</p></div></div></div></div>
 
 <!-- Testimonials -->
-<div class="testimonials-section" id="testimonials">
-    <div class="container">
-        <h2 class="section-title" data-aos="fade-up">What Our Clients Say</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-card" data-aos="fade-right"><i class="fas fa-quote-left"></i><p>"Fantech delivered our commercial complex on time and within budget. Exceptional quality and professionalism."</p><h4>- James Mwangi</h4><span>Property Developer</span></div>
-            <div class="testimonial-card" data-aos="fade-up"><i class="fas fa-quote-left"></i><p>"From design to completion, the team was transparent, skilled, and dedicated. Our dream home became reality."</p><h4>- Sarah Ochieng</h4><span>Homeowner</span></div>
-            <div class="testimonial-card" data-aos="fade-left"><i class="fas fa-quote-left"></i><p>"Outstanding renovation and electric fence installation. Attention to detail exceeded expectations."</p><h4>- David Kimani</h4><span>Business Owner</span></div>
-        </div>
-    </div>
-</div>
+<div class="testimonials-section" id="testimonials"><div class="container"><h2 class="section-title" data-aos="fade-up">What Our Clients Say</h2><div class="testimonials-grid"><div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"Fantech delivered our commercial complex on time and within budget. Exceptional quality."</p><h4>- James Mwangi</h4></div><div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"From design to completion, the team was transparent and skilled. Dream home became reality."</p><h4>- Sarah Ochieng</h4></div><div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"Outstanding electric fence and renovation. Attention to detail exceeded expectations."</p><h4>- David Kimani</h4></div></div></div></div>
 
-<!-- Ready to Build -->
-<div class="container">
-    <div class="ready-section" data-aos="zoom-in">
-        <h2>Ready to Build Your Dream Project?</h2>
-        <p>Get in touch today for a free consultation and quote. Let's bring your vision to life.</p>
-        <a href="#contact" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Get a Quote</a>
-    </div>
-</div>
+<!-- CTA -->
+<div class="container"><div class="ready-section" data-aos="zoom-in"><h2>Ready to Build Your Dream Project?</h2><p>Get in touch today for a free consultation and quote.</p><a href="#contact" class="btn btn-primary" style="background:var(--accent); margin-top:20px;"><i class="fas fa-arrow-right"></i> Get a Quote</a></div></div>
 
-<!-- Contact Section with WhatsApp Form -->
+<!-- REDESIGNED CONTACT SECTION - Modern & Clean -->
 <div class="container" id="contact">
-    <div class="contact-section" data-aos="fade-up">
-        <div class="contact-flex">
-            <div class="contact-info">
-                <h3><i class="fas fa-hard-hat"></i> Fantech Construction Services</h3>
-                <p><i class="fas fa-user-tie"></i> <strong>Fanuel Omondi Odeny</strong> (Managing Director)</p>
-                <p><i class="fas fa-phone-alt"></i> <a href="tel:+254718697501">0718 697 501</a> / <a href="tel:+254781250142">0781 250 142</a></p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:fanuelodeny@gmail.com">fanuelodeny@gmail.com</a></p>
-                <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
-                <hr style="margin: 25px 0;">
-                <p><strong>Our Services Include:</strong></p>
-                <p>✓ Architectural & Structural Designs<br>✓ BOQ (Bill of Quantities)<br>✓ General Construction<br>✓ Civil Works<br>✓ Supply of Materials<br>✓ Swimming Pool Design & Build<br>✓ Interior Finishing<br>✓ Electric Fence Installation</p>
-                <hr style="margin: 25px 0;">
-                <div style="background: #F0F8FF; padding: 20px; border-radius: 15px;">
-                    <p><i class="fas fa-clock"></i> <strong>Response Time:</strong></p>
-                    <p>📱 WhatsApp: Within 30 minutes<br>📞 Phone: Immediate<br>✉️ Email: Within 24 hours</p>
+    <div class="contact-modern">
+        <div class="contact-grid">
+            <!-- left panel -->
+            <div class="contact-info-panel">
+                <div>
+                    <div class="contact-badge"><i class="fas fa-hard-hat"></i> Get in Touch</div>
+                    <h2>Let's discuss <span>your project</span></h2>
+                    <p class="contact-desc">We're here to answer your questions and provide expert guidance for your construction needs.</p>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="info-text"><h4>Call Us</h4><a href="tel:+254718697501">0718 697 501</a> / <a href="tel:+254781250142">0781 250 142</a></div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="info-text"><h4>Email Us</h4><a href="mailto:fanuelodeny@gmail.com">fanuelodeny@gmail.com</a></div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info-text"><h4>Office Location</h4><p>Nairobi, Kenya (Nationwide Services)</p></div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-user-tie"></i></div>
+                            <div class="info-text"><h4>Managing Director</h4><p>Fanuel Omondi Odeny</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size:0.8rem; opacity:0.7;">Expertise across:</div>
+                    <div class="service-pills">
+                        <span class="pill">Architectural Design</span><span class="pill">BOQ</span><span class="pill">Construction</span>
+                        <span class="pill">Civil Works</span><span class="pill">Swimming Pools</span><span class="pill">Electric Fences</span>
+                        <span class="pill">Interior Finishing</span><span class="pill">Material Supply</span>
+                    </div>
                 </div>
             </div>
-            <div class="contact-form">
-                <h3 style="margin-bottom: 20px; color: var(--primary);">📋 Request a Free Quote</h3>
-                <p style="margin-bottom: 20px; color: var(--neutral);">Fill this form and we'll respond on WhatsApp within 30 minutes!</p>
+            <!-- right form -->
+            <div class="contact-form-panel">
+                <h3>Request a Free Quote</h3>
+                <p class="form-subhead">Fill the form, and we'll respond on WhatsApp within 30 minutes</p>
                 <form id="whatsappForm">
+                    <div class="form-group"><input type="text" id="fullName" placeholder="Full name" required></div>
+                    <div class="error-message" id="nameError">Please enter your full name</div>
+                    <div class="form-group"><input type="tel" id="phoneNumber" placeholder="Phone number (e.g., 0718 697501)" required></div>
+                    <div class="error-message" id="phoneError">Valid Kenyan phone number required</div>
                     <div class="form-group">
-                        <input type="text" id="fullName" name="fullName" placeholder="Your Full Name" required>
-                        <div class="error-message" id="nameError">Please enter your name</div>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number (e.g., 0718 697 501)" required>
-                        <div class="error-message" id="phoneError">Please enter a valid Kenyan phone number</div>
-                    </div>
-                    <div class="form-group">
-                        <select id="serviceType" name="serviceType" required>
-                            <option value="">Select a Service</option>
-                            <option>Architectural & Structural Designs</option>
-                            <option>BOQ (Bill of Quantities)</option>
-                            <option>General Construction</option>
-                            <option>Civil Works</option>
-                            <option>Supply of Materials</option>
-                            <option>Swimming Pool Design & Build</option>
-                            <option>Interior Finishing</option>
-                            <option>Electric Fence Installation</option>
-                            <option>Complete Construction Package</option>
+                        <select id="serviceType" required>
+                            <option value="">Select a service</option>
+                            <option>Architectural & Structural Designs</option><option>BOQ (Bill of Quantities)</option>
+                            <option>General Construction</option><option>Civil Works</option><option>Supply of Materials</option>
+                            <option>Swimming Pool Design & Build</option><option>Interior Finishing</option><option>Electric Fence Installation</option>
                         </select>
-                        <div class="error-message" id="serviceError">Please select a service</div>
                     </div>
-                    <div class="form-group">
-                        <textarea rows="4" id="projectDetails" name="projectDetails" placeholder="Tell us about your project (location, budget, timeline, etc.)"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="location" name="location" placeholder="Project Location (e.g., Nairobi, Kiambu, Mombasa)">
-                    </div>
-                    <button type="submit" id="submitBtn">
-                        <i class="fab fa-whatsapp"></i> Send via WhatsApp →
-                    </button>
+                    <div class="error-message" id="serviceError">Please select a service</div>
+                    <div class="form-group"><textarea rows="3" id="projectDetails" placeholder="Project details (location, budget, timeline...)"></textarea></div>
+                    <button type="submit" class="submit-btn" id="submitBtn"><i class="fab fa-whatsapp"></i> Send via WhatsApp →</button>
+                    <div class="form-footer"><i class="fas fa-lock"></i> Your info is secure. Fast response guaranteed.</div>
                 </form>
-                <p style="margin-top: 20px; font-size: 12px; color: var(--neutral); text-align: center;">
-                    <i class="fas fa-lock"></i> Your information is secure. We'll respond within 30 minutes.
-                </p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Back to Top -->
-<a href="#" class="back-to-top" id="backToTop">
-    <i class="fas fa-arrow-up"></i>
-</a>
+<a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+<a href="https://wa.me/254718697501?text=Hello%20Fantech%2C%20I%20need%20a%20quote%20for%20construction%20services." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp fa-lg"></i> Chat on WhatsApp</a>
 
-<!-- WhatsApp Float -->
-<a href="https://wa.me/254718697501?text=Hello%20Fantech%2C%20I%20need%20a%20quote%20for%20construction%20services." class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp" style="font-size: 20px;"></i> Chat on WhatsApp
-</a>
-
-<!-- AI Assistant -->
-<div class="ai-assistant">
-    <div class="ai-button" id="aiButton">
-        <i class="fas fa-robot"></i>
-    </div>
-    <div class="ai-chat-window" id="aiChatWindow">
-        <div class="ai-header">
-            <h4><i class="fas fa-robot"></i> Fantech AI Assistant</h4>
-            <button class="close-ai" id="closeAi"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="ai-messages" id="aiMessages">
-            <div class="message bot">
-                <div class="bubble">👋 Jambo! I'm Fantech's AI Assistant. How can I help you today?</div>
-            </div>
-        </div>
-        <div class="ai-options" id="aiOptions">
-            <div class="ai-option" data-question="What services do you offer?">📋 Our Services</div>
-            <div class="ai-option" data-question="How much does construction cost?">💰 Cost Estimate</div>
-            <div class="ai-option" data-question="How long does a project take?">⏱️ Project Timeline</div>
-            <div class="ai-option" data-question="Are you licensed in Kenya?">✅ License Info</div>
-            <div class="ai-option" data-question="Get a quote">📞 Request Quote</div>
-        </div>
-        <div class="ai-input-area">
-            <input type="text" id="aiInput" placeholder="Type your question...">
-            <button id="aiSend"><i class="fas fa-paper-plane"></i></button>
-        </div>
-    </div>
-</div>
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <p><strong>FANTECH CONSTRUCTION SERVICES</strong> | Your Satisfaction Our Priority</p>
-        <p>📞 0718 697 501 · ✉️ fanuelodeny@gmail.com · 📍 NAIROBI, KENYA</p>
-        <p style="margin-top: 20px;">© 2026 Fantech Construction | Kenya's Premier Builder</p>
-    </div>
-</footer>
+<footer><div class="container"><p><strong>FANTECH CONSTRUCTION SERVICES</strong> | Your Satisfaction Our Priority</p><p>📞 0718 697 501 · ✉️ fanuelodeny@gmail.com · 📍 NAIROBI, KENYA</p><p>© 2026 Fantech Construction | Kenya's Premier Builder</p></div></footer>
 
 <script>
-    // ==================== CONFIGURATION ====================
-    const CONFIG = {
-        whatsappNumber: "254718697501", // Without + or 0
-        companyName: "Fantech Construction",
-        responseTime: "30 minutes",
-        adminPhone: "0718 697 501"
-    };
-
-    // ==================== UTILITY FUNCTIONS ====================
-    function showToast(message, type = 'success') {
-        const toast = document.getElementById('toast');
-        toast.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${message}`;
-        toast.className = `toast ${type} show`;
-        setTimeout(() => {
-            toast.classList.remove('show');
-        }, 5000);
-    }
-
-    function validateKenyanPhone(phone) {
-        // Remove spaces and special characters
-        const clean = phone.replace(/[\s\-\(\)]/g, '');
-        // Kenyan phone patterns: 07xxxxxxxx, 01xxxxxxxx, 2547xxxxxxxx, +2547xxxxxxxx
-        const patterns = [
-            /^07\d{8}$/,
-            /^01\d{8}$/,
-            /^2547\d{8}$/,
-            /^\+2547\d{8}$/
-        ];
-        return patterns.some(pattern => pattern.test(clean));
-    }
-
-    function formatPhoneForWhatsApp(phone) {
-        let clean = phone.replace(/[\s\-\(\)]/g, '');
-        if (clean.startsWith('0')) {
-            clean = '254' + clean.substring(1);
-        } else if (clean.startsWith('+')) {
-            clean = clean.substring(1);
-        }
-        return clean;
-    }
-
-    function validateForm() {
-        let isValid = true;
-        
-        // Validate Name
-        const name = document.getElementById('fullName').value.trim();
-        const nameError = document.getElementById('nameError');
-        if (!name || name.length < 2) {
-            nameError.classList.add('show');
-            document.getElementById('fullName').classList.add('error');
-            isValid = false;
-        } else {
-            nameError.classList.remove('show');
-            document.getElementById('fullName').classList.remove('error');
-        }
-        
-        // Validate Phone
-        const phone = document.getElementById('phoneNumber').value.trim();
-        const phoneError = document.getElementById('phoneError');
-        if (!phone || !validateKenyanPhone(phone)) {
-            phoneError.classList.add('show');
-            document.getElementById('phoneNumber').classList.add('error');
-            isValid = false;
-        } else {
-            phoneError.classList.remove('show');
-            document.getElementById('phoneNumber').classList.remove('error');
-        }
-        
-        // Validate Service
-        const service = document.getElementById('serviceType').value;
-        const serviceError = document.getElementById('serviceError');
-        if (!service || service === '') {
-            serviceError.classList.add('show');
-            document.getElementById('serviceType').classList.add('error');
-            isValid = false;
-        } else {
-            serviceError.classList.remove('show');
-            document.getElementById('serviceType').classList.remove('error');
-        }
-        
-        return isValid;
-    }
-
-    // ==================== WHATSAPP FORM SUBMISSION ====================
-    async function sendToWhatsApp(formData) {
-        const name = formData.get('fullName');
-        const phone = formData.get('phoneNumber');
-        const service = formData.get('serviceType');
-        const details = formData.get('projectDetails') || 'Not specified';
-        const location = formData.get('location') || 'Not specified';
-        
-        // Format the WhatsApp message
-        const message = `🏗️ *NEW CONSTRUCTION QUOTE REQUEST* 🏗️\n\n` +
-                       `*Client Name:* ${name}\n` +
-                       `*Phone:* ${phone}\n` +
-                       `*Service:* ${service}\n` +
-                       `*Location:* ${location}\n` +
-                       `*Project Details:*\n${details}\n\n` +
-                       `_Submitted via Fantech Website Form_\n` +
-                       `📅 ${new Date().toLocaleString('en-KE', { timeZone: 'Africa/Nairobi' })}`;
-        
-        // Format phone for WhatsApp
-        const whatsappPhone = formatPhoneForWhatsApp(CONFIG.whatsappNumber);
-        const encodedMessage = encodeURIComponent(message);
-        const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodedMessage}`;
-        
-        // Open WhatsApp in a new tab
-        window.open(whatsappUrl, '_blank');
-        
-        // Also send an auto-reply to the customer (optional - opens their WhatsApp too)
-        const customerMessage = `*${CONFIG.companyName}* - Quote Request Received ✅\n\n` +
-                               `Hi ${name}, thank you for contacting ${CONFIG.companyName}!\n\n` +
-                               `We have received your request for:\n📋 *${service}*\n📍 *${location}*\n\n` +
-                               `Our team will respond to you within ${CONFIG.responseTime} on this WhatsApp number.\n\n` +
-                               `For urgent inquiries, call us at 📞 ${CONFIG.adminPhone}\n\n` +
-                               `_This is an automated message._`;
-        
-        const customerPhone = formatPhoneForWhatsApp(phone);
-        const customerWhatsappUrl = `https://wa.me/${customerPhone}?text=${encodeURIComponent(customerMessage)}`;
-        
-        // Optional: Open customer WhatsApp in a new tab (comment out if you don't want this)
-        // window.open(customerWhatsappUrl, '_blank');
-        
-        return true;
-    }
-
-    // Form submission handler
-    document.getElementById('whatsappForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        if (!validateForm()) {
-            showToast('Please fill all required fields correctly', 'error');
-            return;
-        }
-        
-        const submitBtn = document.getElementById('submitBtn');
-        const originalText = submitBtn.innerHTML;
-        
-        // Disable button and show loading
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending to WhatsApp...';
-        
-        try {
-            const formData = new FormData(this);
-            await sendToWhatsApp(formData);
-            showToast('✓ Request sent! We will contact you on WhatsApp within 30 minutes', 'success');
-            
-            // Reset form
-            this.reset();
-            
-        } catch (error) {
-            console.error('Error:', error);
-            showToast('Error sending request. Please call us directly at ' + CONFIG.adminPhone, 'error');
-        } finally {
-            // Re-enable button
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalText;
-        }
+    // Immediate load - no delay
+    document.getElementById('loader')?.remove();
+    // progress bar
+    window.addEventListener('scroll', () => { const winScroll = document.documentElement.scrollTop; const height = document.documentElement.scrollHeight - window.innerHeight; const scrolled = (winScroll / height) * 100; if(document.getElementById('progressBar')) document.getElementById('progressBar').style.width = scrolled + '%'; });
+    function updateTime() { const now = new Date().toLocaleTimeString('en-KE', { timeZone: 'Africa/Nairobi', hour:'2-digit', minute:'2-digit', second:'2-digit' }); if(document.getElementById('liveTime')) document.getElementById('liveTime').innerText = now; }
+    updateTime(); setInterval(updateTime,1000);
+    // typing
+    const words = ["Architectural Designs", "BOQ & Costing", "General Construction", "Civil Works", "Swimming Pools", "Electric Fences"];
+    let idx=0, isDel=false, cur=""; const typedSpan=document.getElementById("typed-text");
+    function typeEffect(){ if(!typedSpan) return; if(isDel) cur=words[idx].substring(0,cur.length-1); else cur=words[idx].substring(0,cur.length+1); typedSpan.textContent=cur; if(!isDel && cur===words[idx]){ isDel=true; setTimeout(typeEffect,2000); } else if(isDel && cur===""){ isDel=false; idx=(idx+1)%words.length; setTimeout(typeEffect,400); } else setTimeout(typeEffect,isDel?70:120); } typeEffect();
+    // counter
+    const counters=document.querySelectorAll('.stat-number'); const obs=new IntersectionObserver((e)=>{ e.forEach(entry=>{ if(entry.isIntersecting){ counters.forEach(c=>{ const t=+c.dataset.target; let count=0; const upd=()=>{ count+=t/150; if(count<t){ c.innerText=Math.ceil(count)+(t===98?'%':'+'); requestAnimationFrame(upd); } else c.innerText=t+(t===98?'%':'+'); }; upd(); }); obs.unobserve(entry.target); } }); },{threshold:0.5}); document.querySelectorAll('.stats-section').forEach(s=>obs.observe(s));
+    // slideshow one by one
+    let activeSlide=0, slideInterval; const slides=document.querySelectorAll('.slide'), indicators=document.querySelectorAll('.indicator'); const totalSlides=slides.length;
+    function showSlide(i){ slides.forEach((s,idx)=>s.classList.toggle('active',idx===i)); indicators.forEach((ind,idx)=>ind.classList.toggle('active',idx===i)); activeSlide=i; }
+    function nextSlide(){ showSlide((activeSlide+1)%totalSlides); }
+    function startSlide(){ if(slideInterval) clearInterval(slideInterval); slideInterval=setInterval(nextSlide,5000); }
+    indicators.forEach((ind,i)=>{ ind.addEventListener('click',()=>{ showSlide(i); clearInterval(slideInterval); startSlide(); }); }); startSlide();
+    // AOS
+    const aos=document.querySelectorAll('[data-aos]'); const ao=new IntersectionObserver((e)=>{ e.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('aos-animate'); ao.unobserve(entry.target); } }); },{threshold:0.1}); aos.forEach(el=>ao.observe(el));
+    // back to top
+    const back=document.getElementById('backToTop'); window.addEventListener('scroll',()=>{ if(window.scrollY>400) back.classList.add('show'); else back.classList.remove('show'); }); back.addEventListener('click',(e)=>{ e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); });
+    // service card to form
+    document.querySelectorAll('.service-link').forEach(link=>{ link.addEventListener('click',(e)=>{ e.preventDefault(); const svc=link.closest('.service-card')?.querySelector('h3')?.innerText||''; const sel=document.getElementById('serviceType'); if(sel && svc){ for(let opt of sel.options) if(opt.value===svc) opt.selected=true; } document.getElementById('contact').scrollIntoView({behavior:'smooth'}); }); });
+    // form whatsapp
+    function validateKenyanPhone(p){ const clean=p.replace(/\s/g,''); return /^(07|01)\d{8}$|^2547\d{8}$|^\+2547\d{8}$/.test(clean); }
+    document.getElementById('whatsappForm').addEventListener('submit',function(e){ e.preventDefault(); let valid=true; const name=document.getElementById('fullName').value.trim(); const phone=document.getElementById('phoneNumber').value.trim(); const service=document.getElementById('serviceType').value;
+        if(name.length<2){ document.getElementById('nameError').classList.add('show'); valid=false; } else document.getElementById('nameError').classList.remove('show');
+        if(!validateKenyanPhone(phone)){ document.getElementById('phoneError').classList.add('show'); valid=false; } else document.getElementById('phoneError').classList.remove('show');
+        if(!service){ document.getElementById('serviceError').classList.add('show'); valid=false; } else document.getElementById('serviceError').classList.remove('show');
+        if(!valid) return;
+        const msg=`🏗️ *NEW CONSTRUCTION QUOTE* 🏗️\n*Client:* ${name}\n*Phone:* ${phone}\n*Service:* ${service}\n*Details:* ${document.getElementById('projectDetails').value||'Not specified'}\nSubmitted via Fantech website.`;
+        window.open(`https://wa.me/254718697501?text=${encodeURIComponent(msg)}`,'_blank');
+        const toast=document.createElement('div'); toast.innerText='✓ Opening WhatsApp...'; toast.style.position='fixed'; toast.style.bottom='80px'; toast.style.left='50%'; toast.style.transform='translateX(-50%)'; toast.style.background='#10B981'; toast.style.color='white'; toast.style.padding='10px 24px'; toast.style.borderRadius='40px'; toast.style.zIndex='9999'; document.body.appendChild(toast); setTimeout(()=>toast.remove(),2500);
+        this.reset();
     });
-
-    // Real-time validation
-    document.getElementById('fullName').addEventListener('input', function() {
-        if (this.value.trim().length >= 2) {
-            document.getElementById('nameError').classList.remove('show');
-            this.classList.remove('error');
-        }
-    });
-    
-    document.getElementById('phoneNumber').addEventListener('input', function() {
-        if (validateKenyanPhone(this.value)) {
-            document.getElementById('phoneError').classList.remove('show');
-            this.classList.remove('error');
-        }
-    });
-    
-    document.getElementById('serviceType').addEventListener('change', function() {
-        if (this.value !== '') {
-            document.getElementById('serviceError').classList.remove('show');
-            this.classList.remove('error');
-        }
-    });
-
-    // ==================== AI ASSISTANT ====================
-    const aiResponses = {
-        default: "Thank you for your question! Please fill out the quote form above or WhatsApp us at 0718 697 501 for a detailed response.",
-        services: "🏗️ Fantech offers: Architectural Designs, BOQ, General Construction, Civil Works, Material Supply, Swimming Pools, Interior Finishing, and Electric Fence Installation. Would you like a quote for any of these?",
-        cost: "💰 Construction costs vary by project. For an accurate estimate, please fill out the quote form above with your project details, and we'll respond within 30 minutes!",
-        timeline: "⏱️ Project timelines depend on scope. A typical residential house takes 6-9 months, commercial buildings 12-24 months. Fill out the form for a personalized timeline!",
-        licensed: "✅ Yes! Fantech is fully licensed by the National Construction Authority (NCA) and all our professionals are certified in Kenya.",
-        quote: "📞 Great! Please fill out the quote form above or WhatsApp us at 0718 697 501 for a free, no-obligation quote within 30 minutes.",
-        hello: "👋 Jambo! Welcome to Fantech Construction. How can I assist with your construction needs today? You can also request a quote using the form above!"
-    };
-
-    function getAIResponse(question) {
-        const q = question.toLowerCase();
-        if (q.includes("service") || q.includes("offer")) return aiResponses.services;
-        if (q.includes("cost") || q.includes("price") || q.includes("estimate")) return aiResponses.cost;
-        if (q.includes("timeline") || q.includes("long") || q.includes("duration")) return aiResponses.timeline;
-        if (q.includes("license") || q.includes("certified") || q.includes("nca")) return aiResponses.licensed;
-        if (q.includes("quote") || q.includes("estimate")) return aiResponses.quote;
-        if (q.includes("hello") || q.includes("hi") || q.includes("jambo")) return aiResponses.hello;
-        return aiResponses.default;
-    }
-
-    const aiButton = document.getElementById('aiButton');
-    const aiChatWindow = document.getElementById('aiChatWindow');
-    const closeAi = document.getElementById('closeAi');
-    const aiInput = document.getElementById('aiInput');
-    const aiSend = document.getElementById('aiSend');
-    const aiMessages = document.getElementById('aiMessages');
-
-    function addMessage(text, isUser = false) {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
-        messageDiv.innerHTML = `<div class="bubble">${text}</div>`;
-        aiMessages.appendChild(messageDiv);
-        aiMessages.scrollTop = aiMessages.scrollHeight;
-    }
-
-    function sendUserMessage(message) {
-        addMessage(message, true);
-        setTimeout(() => {
-            const response = getAIResponse(message);
-            addMessage(response);
-        }, 500);
-    }
-
-    aiButton.addEventListener('click', () => {
-        aiChatWindow.classList.toggle('open');
-    });
-
-    closeAi.addEventListener('click', () => {
-        aiChatWindow.classList.remove('open');
-    });
-
-    aiSend.addEventListener('click', () => {
-        const message = aiInput.value.trim();
-        if (message) {
-            sendUserMessage(message);
-            aiInput.value = '';
-        }
-    });
-
-    aiInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            aiSend.click();
-        }
-    });
-
-    document.querySelectorAll('.ai-option').forEach(option => {
-        option.addEventListener('click', () => {
-            const question = option.getAttribute('data-question');
-            sendUserMessage(question);
-        });
-    });
-
-    // ==================== LOADER ====================
-    window.addEventListener('load', function() {
-        const loader = document.getElementById('loader');
-        loader.classList.add('hidden');
-        setTimeout(() => loader.style.display = 'none', 500);
-    });
-
-    // ==================== SCROLL PROGRESS ====================
-    window.addEventListener('scroll', function() {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        const progressBar = document.getElementById('progressBar');
-        if (progressBar) progressBar.style.width = scrolled + '%';
-    });
-
-    // ==================== STICKY HEADER ====================
-    window.addEventListener('scroll', function() {
-        const navbar = document.getElementById('navbar');
-        if (window.scrollY > 100) {
-            navbar.classList.add('shrink');
-        } else {
-            navbar.classList.remove('shrink');
-        }
-    });
-
-    // ==================== BACK TO TOP ====================
-    const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTop.classList.add('show');
-        } else {
-            backToTop.classList.remove('show');
-        }
-    });
-    
-    backToTop.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // ==================== LIVE TIME ====================
-    function updateTime() {
-        const now = new Date();
-        const kenyaTime = now.toLocaleTimeString('en-US', { timeZone: 'Africa/Nairobi', hour: '2-digit', minute: '2-digit', second: '2-digit' });
-        const timeElement = document.getElementById('liveTime');
-        if (timeElement) timeElement.textContent = kenyaTime;
-    }
-    updateTime();
-    setInterval(updateTime, 1000);
-
-    // ==================== TYPING ANIMATION ====================
-    const words = ["Architectural Designs", "BOQ & Costing", "General Construction", "Civil Works", "Swimming Pools", "Electric Fences", "Interior Finishing"];
-    let i = 0;
-    let currentWord = "";
-    let isDeleting = false;
-    const typedElement = document.getElementById("typed-text");
-
-    function typeEffect() {
-        if (!typedElement) return;
-        if (isDeleting) {
-            currentWord = words[i].substring(0, currentWord.length - 1);
-        } else {
-            currentWord = words[i].substring(0, currentWord.length + 1);
-        }
-        typedElement.textContent = currentWord;
-
-        if (!isDeleting && currentWord === words[i]) {
-            isDeleting = true;
-            setTimeout(typeEffect, 2000);
-        } else if (isDeleting && currentWord === "") {
-            isDeleting = false;
-            i = (i + 1) % words.length;
-            setTimeout(typeEffect, 500);
-        } else {
-            setTimeout(typeEffect, isDeleting ? 100 : 150);
-        }
-    }
-    typeEffect();
-
-    // ==================== COUNTER ANIMATION ====================
-    const counters = document.querySelectorAll('.stat-number');
-    const speed = 200;
-
-    const animateCounters = () => {
-        counters.forEach(counter => {
-            const target = parseInt(counter.getAttribute('data-target'));
-            let count = 0;
-            const updateCount = () => {
-                const increment = target / speed;
-                if (count < target) {
-                    count += increment;
-                    counter.innerText = Math.ceil(count) + (target === 98 ? '%' : '+');
-                    requestAnimationFrame(updateCount);
-                } else {
-                    counter.innerText = target + (target === 98 ? '%' : '+');
-                }
-            };
-            updateCount();
-        });
-    };
-
-    const observerOptions = { threshold: 0.5 };
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounters();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    document.querySelectorAll('.stats-section').forEach(section => observer.observe(section));
-
-    // ==================== HERO SLIDESHOW ====================
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const indicators = document.querySelectorAll('.indicator');
-    const totalSlides = slides.length;
-    let slideshowInterval;
-
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
-        });
-        indicators.forEach((indicator, i) => {
-            indicator.classList.toggle('active', i === index);
-        });
-        currentSlide = index;
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        showSlide(currentSlide);
-    }
-
-    function startSlideshow() {
-        if (slideshowInterval) clearInterval(slideshowInterval);
-        slideshowInterval = setInterval(nextSlide, 5000);
-    }
-
-    function stopSlideshow() {
-        if (slideshowInterval) {
-            clearInterval(slideshowInterval);
-            slideshowInterval = null;
-        }
-    }
-
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => showSlide(index));
-    });
-
-    // Handle page visibility
-    document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-            stopSlideshow();
-        } else {
-            startSlideshow();
-        }
-    });
-
-    startSlideshow();
-
-    // ==================== AOS-LIKE SCROLL ANIMATIONS ====================
-    const animatedElements = document.querySelectorAll('[data-aos]');
-    const scrollObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('aos-animate');
-                scrollObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    animatedElements.forEach(el => scrollObserver.observe(el));
-
-    // ==================== SERVICE CARD CLICK ====================
-    document.querySelectorAll('.service-card .service-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const serviceName = this.closest('.service-card').querySelector('h3').innerText;
-            document.getElementById('serviceType').value = serviceName;
-            document.getElementById('serviceType').dispatchEvent(new Event('change'));
-            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-        });
-    });
-
-    console.log('🚀 Fantech Construction Website Loaded Successfully!');
-    console.log('📱 WhatsApp Form Integration Active');
 </script>
 </body>
 </html>
+```
