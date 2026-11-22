@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Projects | Fantech Construction</title>
+<meta name="description" content="Portfolio of completed projects by Fantech Construction — residential, commercial, civil works and interior finishing across Kenya.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://fantechconstructions.co.ke/portfolio">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏗️</text></svg>">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#0E0E0E;color:#1A1A1A;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font-family:inherit}
+
+:root{
+  --ink:#0E0E0E;--ink-2:#1A1A1A;--ink-3:#262626;
+  --sand:#F5F1EA;--sand-2:#EDE7DC;--muted:#8A8578;--line:#E5DFD3;
+  --accent:#F15A24;--accent-dark:#D4470F;--white:#FFFFFF;
+  --max:1280px;
+  --shadow-lg:0 32px 64px -16px rgba(0,0,0,0.35);
+}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+@media(max-width:640px){.wrap{padding:0 20px}}
+
+/* NAV (same as main site) */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(14,14,14,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);padding:12px 0}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:0.05em;color:#fff;text-decoration:none;line-height:1;display:flex;flex-direction:column}
+.brand span{font-family:'Inter',sans-serif;font-size:0.55rem;font-weight:600;letter-spacing:0.3em;color:var(--accent);margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:36px}
+.nav-links a{font-size:0.82rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.2s}
+.nav-links a:not(.nav-cta):hover{color:var(--accent)}
+.nav-links a.active{color:var(--accent)}
+.nav-cta{background:var(--accent);color:#fff!important;padding:12px 24px;clip-path:polygon(0 0,100% 0,100% 76%,92% 100%,0 100%)}
+.nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:8px}
+@media(max-width:900px){
+  .nav-links{position:fixed;top:0;right:0;bottom:0;width:80%;max-width:340px;background:var(--ink);flex-direction:column;justify-content:center;gap:8px;padding:40px;transform:translateX(100%);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1)}
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a{font-size:1rem;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.1);width:100%}
+  .nav-cta{text-align:center;margin-top:16px;border-bottom:none!important}
+  .nav-toggle{display:block;z-index:1001}
+  .nav-toggle.open{color:var(--ink);position:fixed;top:20px;right:20px;background:#fff;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+}
+
+/* PAGE HEADER */
+.page-head{background:var(--ink);color:#fff;padding:160px 0 80px;position:relative;overflow:hidden}
+.page-head::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(45deg,transparent,transparent 60px,rgba(241,90,36,0.04) 60px,rgba(241,90,36,0.04) 120px)}
+.page-head .wrap{position:relative;z-index:2}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.eyebrow::before{content:'';width:28px;height:2px;background:var(--accent)}
+.display{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(3rem,8vw,6rem);line-height:0.92;letter-spacing:0.01em;text-transform:uppercase;color:#fff;margin-bottom:24px}
+.display em{font-style:normal;color:var(--accent)}
+.page-head p{font-size:clamp(1rem,1.4vw,1.15rem);color:rgba(255,255,255,0.7);max-width:600px;line-height:1.7}
+
+/* FILTERS */
+.filters-bar{background:var(--sand);border-bottom:1px solid var(--line);padding:24px 0;position:sticky;top:68px;z-index:50}
+.filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.filter{padding:12px 26px;font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:transparent;border:1.5px solid var(--line);color:var(--ink-3);cursor:pointer;transition:all 0.25s}
+.filter.active,.filter:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* PORTFOLIO GRID */
+.portfolio-section{background:var(--sand);padding:80px 0 120px}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.project{position:relative;overflow:hidden;aspect-ratio:4/5;cursor:pointer;background:var(--ink);opacity:0;transform:translateY(30px);transition:opacity 0.6s,transform 0.6s}
+.project.in{opacity:1;transform:translateY(0)}
+.project:nth-child(3n+1){grid-column:span 2;aspect-ratio:16/10}
+.project img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.2,0.8,0.2,1)}
+.project:hover img{transform:scale(1.08)}
+.project-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(14,14,14,0.92) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:32px;color:#fff}
+.project-tag{font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.project h3{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);letter-spacing:0.02em;line-height:1;margin-bottom:8px}
+.project-meta{font-size:0.78rem;color:rgba(255,255,255,0.7);letter-spacing:0.06em}
+.project-arrow{position:absolute;top:24px;right:24px;width:48px;height:48px;background:rgba(255,255,255,0.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.9rem;opacity:0;transform:translateY(10px);transition:all 0.3s}
+.project:hover .project-arrow{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.portfolio-grid{grid-template-columns:repeat(2,1fr)}.project:nth-child(3n+1){grid-column:span 1;aspect-ratio:4/5}}
+@media(max-width:560px){.portfolio-grid{grid-template-columns:1fr}}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(14,14,14,0.96);z-index:2000;display:none;align-items:center;justify-content:center;padding:40px;opacity:0;transition:opacity 0.3s}
+.lightbox.open{display:flex;opacity:1}
+.lightbox-inner{max-width:1100px;width:100%;background:var(--ink-2);display:grid;grid-template-columns:1.3fr 1fr;max-height:85vh;overflow:hidden;position:relative;transform:scale(0.95);transition:transform 0.3s}
+.lightbox.open .lightbox-inner{transform:scale(1)}
+.lightbox-img{background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.lightbox-img img{width:100%;height:100%;object-fit:cover;max-height:85vh}
+.lightbox-info{padding:48px 40px;color:#fff;overflow-y:auto;display:flex;flex-direction:column;justify-content:center}
+.lightbox-info .eyebrow{margin-bottom:16px}
+.lightbox-info h2{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;letter-spacing:0.02em;line-height:1;margin-bottom:20px}
+.lightbox-info .desc{font-size:0.95rem;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:28px}
+.specs{display:flex;flex-direction:column;gap:16px;border-top:1px solid rgba(255,255,255,0.1);padding-top:24px}
+.spec{display:flex;justify-content:space-between;gap:20px}
+.spec-label{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.45)}
+.spec-val{font-size:0.9rem;font-weight:600;color:#fff;text-align:right}
+.lightbox-close{position:absolute;top:16px;right:16px;width:44px;height:44px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background 0.2s}
+.lightbox-close:hover{background:var(--accent)}
+@media(max-width:800px){.lightbox{padding:16px}.lightbox-inner{grid-template-columns:1fr;max-height:90vh}.lightbox-img{max-height:40vh}.lightbox-info{padding:32px 24px}}
+
+/* CTA */
+.cta{background:var(--accent);padding:100px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(0,0,0,0.03) 40px,rgba(0,0,0,0.03) 80px)}
+.cta .wrap{position:relative;z-index:2}
+.cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3.5rem);color:#fff;letter-spacing:0.02em;line-height:1;margin-bottom:20px}
+.cta p{color:rgba(255,255,255,0.9);margin-bottom:40px;font-size:1.1rem}
+.cta .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:var(--ink);color:#fff;font-weight:700;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.3s}
+.cta .btn:hover{background:#fff;color:var(--ink)}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(255,255,255,0.65);padding:60px 0 32px;text-align:center}
+.foot-brand{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#fff;letter-spacing:0.04em;line-height:1;margin-bottom:16px}
+.foot-brand span{display:block;font-family:'Inter',sans-serif;font-size:0.55rem;letter-spacing:0.3em;color:var(--accent);margin-top:4px}
+footer p{font-size:0.85rem;margin-bottom:8px}
+footer a{color:var(--accent);text-decoration:none}
+.foot-bottom{margin-top:32px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);font-size:0.75rem;color:rgba(255,255,255,0.4)}
+
+/* FLOATING */
+.wa-float{position:fixed;bottom:28px;right:28px;width:58px;height:58px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 8px 24px rgba(37,211,102,0.4);z-index:90;text-decoration:none;transition:transform 0.25s}
+.wa-float:hover{transform:scale(1.08)}
+.to-top{position:fixed;bottom:100px;right:28px;width:46px;height:46px;background:var(--ink);color:#fff;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:90;opacity:0;visibility:hidden;transition:all 0.3s}
+.to-top.show{opacity:1;visibility:visible}
+.to-top:hover{background:var(--accent);transform:translateY(-3px)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">FANTECH<span>CONSTRUCTION</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#services">Services</a>
+      <a href="portfolio.html" class="active">Projects</a>
+      <a href="index.html#why">Why Us</a>
+      <a href="index.html#contact" class="nav-cta">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEAD -->
+<header class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Selected Work</div>
+    <h1 class="display">Projects<br><em>That Speak.</em></h1>
+    <p>A selection of residential, commercial, civil and interior projects delivered by Fantech across Kenya. Every build tells a story — here are some of ours.</p>
+  </div>
+</header>
+
+<!-- FILTERS -->
+<div class="filters-bar">
+  <div class="wrap">
+    <div class="filters">
+      <button class="filter active" data-filter="all">All Projects</button>
+      <button class="filter" data-filter="residential">Residential</button>
+      <button class="filter" data-filter="commercial">Commercial</button>
+      <button class="filter" data-filter="civil">Civil Works</button>
+      <button class="filter" data-filter="interior">Interior</button>
+    </div>
+  </div>
+</div>
+
+<!-- PORTFOLIO GRID -->
+<section class="portfolio-section">
+  <div class="wrap">
+    <div class="portfolio-grid" id="portfolioGrid">
+
+      <!-- PROJECT 1 -->
+      <div class="project" data-cat="commercial"
+           data-title="Westlands Office Complex"
+           data-tag="Commercial"
+           data-desc="A modern 8-floor commercial office complex in Westlands, Nairobi. Delivered complete with curtain-wall glazing, basement parking, and full MEP installation — on schedule and within budget."
+           data-img="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80"
+           data-location="Westlands, Nairobi"
+           data-duration="14 months"
+           data-size="8 floors · 6,400 m²"
+           data-value="KES 340M">
+        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&q=75" alt="Westlands Office Complex" loading="lazy">
+        <div class="project-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+        <div class="project-overlay">
+          <div class="project-tag">Commercial</div>
+          <h3>Westlands Office Complex</h3>
+          <div class="project-meta">Nairobi · 14 months · 8 floors</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 2 -->
+      <div class="project" data-cat="residential"
+           data-title="Karen Family Villa"
+           data-tag="Residential"
+           data-desc="A 5-bedroom contemporary family villa in Karen. Includes a detached guest wing, landscaped garden, and a 60 m² swimming pool — all designed and built in-house."
+           data-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
+           data-location="Karen, Nairobi"
+           data-duration="9 months"
+           data-size="5 bed · 420 m²"
+           data-value="KES 48M">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=75" alt="Karen Family Villa" loading="lazy">
+        <div class="project-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+        <div class="project-overlay">
+          <div class="project-tag">Residential</div>
+          <h3>Karen Family Villa</h3>
+          <div class="project-meta">Karen · 9 months</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="project" data-cat="civil"
+           data-title="Kiambu Access Road"
+           data-tag="Civil Works"
+           data-desc="A 4.2 km access road including drainage, culverts, and a reinforced concrete bridge. Delivered using our own fleet of heavy machinery — no subcontracting."
+           data-img="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80"
+           data-location="Kiambu County"
+           data-duration="6 months"
+           data-size="4.2 km + bridge"
+           data-value="KES 92M">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=75" alt="Kiambu Access Road" loading="lazy">
+        <div class="project-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+        <div class="project-overlay">
+          <div class="project-tag">Civil Works</div>
+          <h3>Kiambu Access Road</h3>
+          <div class="project-meta">Kiambu · 6 months · 4.2 km</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 4 -->
+      <div class="project" data-cat="interior"
+           data-title="Runda Interior Fit-Out"
+           data-tag="Interior"
+           data-desc="Complete interior fit-out of a private residence in Runda — kitchen, bathrooms, custom joinery, lighting design, and premium finishes throughout."
+           data-img="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80"
+           data-location="Runda, Nairobi"
+           data-duration="4 months"
+           data-size="Full home · 380 m²"
+           data-value="KES 22M">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=75" alt="Runda Interior Fit-Out" loading="lazy">
+        <div class="project-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+        <div class="project-overlay">
+          <div class="project-tag">Interior</div>
+          <h3>Runda Interior Fit-Out</h3>
+          <div class="project-meta">Runda · 4 months</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 5 -->
+      <div class="project" data-cat="commercial"
+           data-title="Kilimani Retail Block"
+           data-tag="Commercial"
+           data-desc="A 3-floor retail and office block in Kilimani, purpose-built for mixed retail tenants. Includes shopfront glazing, HVAC, and dedicated parking."
+           data-img="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80"
+           data-location="Kilimani, Nairobi"
+           data-duration="11 months"
+           data-size="3 floors · 2,800 m²"
+           data-value="KES 145M">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=75" alt="Kilimani Retail Block" loading="lazy">
+        <div class="project-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+        <div class="project-overlay">
+          <div class="project-tag">Commercial</div>
+          <h3>Kilimani Retail Block</h3>
+          <div class="project-meta">Kilimani · 11 months</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 6 -->
+      <div class="project" data-cat="residential"
+           data-title="Syokimau Townhouses"
+           data-tag="Residential"
+           data-desc="A gated development of 6 three-bedroom townhouses in Syokimau. Standard finishes, shared amenities, and perimeter security fencing — delivered as a turnkey project."
+           data-img="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80"
+           data-location="Syokimau, Machakos"
+           data-duration="12 months"
+           data-size="6 units · 3 bed each"
+           data-value="KES 78M">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=75" alt="Syokimau Townhouses" loading="lazy">
+        <div class="project-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+        <div class="project-overlay">
+          <div class="project-tag">Residential</div>
+          <h3>Syokimau Townhouses</h3>
+          <div class="project-meta">Syokimau · 12 months</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 7 -->
+      <div class="project" data-cat="civil"
+           data-title="Athi River Drainage Works"
+           data-tag="Civil Works"
+           data-desc="Storm-water drainage and earthworks for an industrial park in Athi River. Included excavation, culvert installation, and reinforced concrete channels."
+           data-img="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80"
+           data-location="Athi River, Machakos"
+           data-duration="5 months"
+           data-size="1.8 km drainage"
+           data-value="KES 56M">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=75" alt="Athi River Drainage Works" loading="lazy">
+        <div class="project-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+        <div class="project-overlay">
+          <div class="project-tag">Civil Works</div>
+          <h3>Athi River Drainage</h3>
+          <div class="project-meta">Athi River · 5 months</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 8 -->
+      <div class="project" data-cat="interior"
+           data-title="Lavington Office Fit-Out"
+           data-tag="Interior"
+           data-desc="Office interior fit-out for a corporate client in Lavington — open-plan workspaces, meeting rooms, reception area, and acoustic ceiling treatments."
+           data-img="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
+           data-location="Lavington, Nairobi"
+           data-duration="3 months"
+           data-size="640 m² office"
+           data-value="KES 18M">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=75" alt="Lavington Office Fit-Out" loading="lazy">
+        <div class="project-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+        <div class="project-overlay">
+          <div class="project-tag">Interior</div>
+          <h3>Lavington Office Fit-Out</h3>
+          <div class="project-meta">Lavington · 3 months</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2>Want to Build Something Like This?</h2>
+    <p>Get a free consultation and a detailed quote within 30 minutes.</p>
+    <a href="index.html#contact" class="btn">Start Your Project <i class="fas fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">FANTECH<span>CONSTRUCTION</span></div>
+    <p>📞 <a href="tel:+254718697501">0718 697 501</a> · ✉️ <a href="mailto:fanuelodeny@gmail.com">fanuelodeny@gmail.com</a></p>
+    <p>Nairobi, Kenya · Nationwide Service</p>
+    <div class="foot-bottom">© <span id="year">2026</span> Fantech Construction Services. All rights reserved.</div>
+  </div>
+</footer>
+
+<a href="https://wa.me/254718697501?text=Hello%20Fantech%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20a%20quote." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<button class="to-top" id="toTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fas fa-times"></i></button>
+    <div class="lightbox-img"><img id="lbImg" src="" alt=""></div>
+    <div class="lightbox-info">
+      <div class="eyebrow" id="lbTag">Project</div>
+      <h2 id="lbTitle">Title</h2>
+      <p class="desc" id="lbDesc">Description</p>
+      <div class="specs">
+        <div class="spec"><span class="spec-label">Location</span><span class="spec-val" id="lbLocation">—</span></div>
+        <div class="spec"><span class="spec-label">Duration</span><span class="spec-val" id="lbDuration">—</span></div>
+        <div class="spec"><span class="spec-label">Scope</span><span class="spec-val" id="lbSize">—</span></div>
+        <div class="spec"><span class="spec-label">Value</span><span class="spec-val" id="lbValue">—</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const $=(s,c=document)=>c.querySelector(s);
+const $$=(s,c=document)=>[...c.querySelectorAll(s)];
+
+/* Year */
+$('#year').textContent=new Date().getFullYear();
+
+/* Mobile menu */
+const navToggle=$('#navToggle'),navLinks=$('#navLinks');
+navToggle.addEventListener('click',()=>{
+  const open=navLinks.classList.toggle('open');
+  navToggle.classList.toggle('open',open);
+  navToggle.querySelector('i').className=open?'fas fa-times':'fas fa-bars';
+});
+
+/* Reveal projects */
+const projObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');projObs.unobserve(e.target);}
+  });
+},{threshold:0.1});
+$$('.project').forEach(p=>projObs.observe(p));
+
+/* Filters */
+$$('.filter').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    $$('.filter').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    $$('.project').forEach(p=>{
+      const show=f==='all'||p.dataset.cat===f;
+      p.style.display=show?'':'none';
+      if(show){p.classList.remove('in');setTimeout(()=>p.classList.add('in'),30);}
+    });
+  });
+});
+
+/* Lightbox */
+const lightbox=$('#lightbox');
+const lbImg=$('#lbImg'),lbTitle=$('#lbTitle'),lbTag=$('#lbTag'),lbDesc=$('#lbDesc');
+const lbLocation=$('#lbLocation'),lbDuration=$('#lbDuration'),lbSize=$('#lbSize'),lbValue=$('#lbValue');
+
+$$('.project').forEach(p=>{
+  p.addEventListener('click',()=>{
+    lbImg.src=p.dataset.img;
+    lbImg.alt=p.dataset.title;
+    lbTitle.textContent=p.dataset.title;
+    lbTag.textContent=p.dataset.tag;
+    lbDesc.textContent=p.dataset.desc;
+    lbLocation.textContent=p.dataset.location;
+    lbDuration.textContent=p.dataset.duration;
+    lbSize.textContent=p.dataset.size;
+    lbValue.textContent=p.dataset.value;
+    lightbox.classList.add('open');
+    document.body.style.overflow='hidden';
+  });
+});
+
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  document.body.style.overflow='';
+}
+$('#lightboxClose').addEventListener('click',closeLightbox);
+lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+
+/* Back to top */
+const toTop=$('#toTop');
+window.addEventListener('scroll',()=>{toTop.classList.toggle('show',window.scrollY>500)},{passive:true});
+toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
