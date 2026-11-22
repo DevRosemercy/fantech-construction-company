@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.fantechconstructions.co.ke/sitemap.xml

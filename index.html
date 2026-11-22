@@ -1,738 +1,148 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-KE">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Fantech Construction | Kenya's #1 Premier Building & Civil Works Contractor</title>
-    <meta name="description" content="Fantech Construction – Nairobi, Kenya. Award-winning expert in architectural designs, BOQ, general construction, civil works, swimming pools, electric fences, interior finishing & material supply. Call 0718 697501">
-    <meta name="keywords" content="construction Kenya, building contractor Nairobi, swimming pool design, electric fence installation, BOQ, civil works Kenya, Fantech">
-    <meta name="author" content="Fanuel Omondi Odeny - Fantech Construction">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Fantech Construction | Kenya's Premier Builder">
-    <meta property="og:description" content="Award-winning construction services across Kenya. 250+ projects completed. Call 0718 697501">
-    <meta property="og:type" content="website">
-    
-    <!-- Geo Tags -->
-    <meta name="geo.region" content="KE">
-    <meta name="geo.placename" content="Nairobi">
-    
-    <link rel="canonical" href="https://fantech.vercel.app">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #FFFFFF;
-            overflow-x: hidden;
-        }
-        :root {
-            --primary: #0A2540;
-            --primary-dark: #041e30;
-            --accent: #F15A24;
-            --accent-dark: #d44a18;
-            --gray-50: #F8FAFC;
-            --gray-100: #F1F5F9;
-            --gray-200: #E2E8F0;
-            --gray-600: #475569;
-            --gray-900: #0F172A;
-            --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
-            --shadow-lg: 0 10px 30px -8px rgba(0,0,0,0.1);
-            --shadow-md: 0 4px 6px -2px rgba(0,0,0,0.05);
-        }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--gray-200); }
-        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 20px; }
-
-        /* hide loader initially - instant load */
-        .loader {
-            position: fixed;
-            inset: 0;
-            background: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            transition: opacity 0.3s;
-            pointer-events: none;
-            opacity: 0;
-        }
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: var(--accent);
-            width: 0%;
-            z-index: 10001;
-            transition: width 0.2s;
-        }
-        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--primary);
-        }
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 70px;
-            height: 4px;
-            background: var(--accent);
-            margin: 12px auto 0;
-            border-radius: 4px;
-        }
-        /* animations */
-        [data-aos] { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1); }
-        [data-aos].aos-animate { opacity: 1; transform: translateY(0); }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 32px;
-            border-radius: 40px;
-            font-weight: 600;
-            transition: all 0.3s;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-        }
-        .btn-primary { background: var(--accent); color: white; box-shadow: 0 4px 12px rgba(241,90,36,0.3); }
-        .btn-primary:hover { background: var(--accent-dark); transform: translateY(-3px); }
-        .btn-outline-light { border: 2px solid white; background: transparent; color: white; }
-        .btn-outline-light:hover { background: white; color: var(--primary); transform: translateY(-3px); }
-        
-        /* Hero Slideshow - ultra fast, one by one */
-        .hero {
-            position: relative;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            will-change: opacity;
-        }
-        .slide.active {
-            opacity: 1;
-            z-index: 1;
-        }
-        .slide::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(10,37,64,0.65);
-        }
-        /* optimized bg images - fast loading CDN */
-        .slide1 { background-image: url('https://i.ibb.co/mVFvZsb6/Bc-U6T.jpg'); }
-        .slide2 { background-image: url('https://i.ibb.co/mVwY6vK1/e-Cz6F.jpg'); }
-        .slide3 { background-image: url('https://i.ibb.co/vxV4Q4wh/o-MM97.jpg'); }
-        .slide4 { background-image: url('https://i.ibb.co/WvcRtG64/VCtat.jpg'); }
-        .slide5 { background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1400&q=75'); }
-        
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            color: white;
-            max-width: 720px;
-            padding: 0 24px;
-        }
-        .hero-badge {
-            display: inline-block;
-            background: rgba(241,90,36,0.2);
-            backdrop-filter: blur(8px);
-            padding: 6px 18px;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            margin-bottom: 24px;
-            border: 1px solid rgba(241,90,36,0.5);
-        }
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-        .hero h1 span { color: var(--accent); }
-        .typing-text {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            min-height: 70px;
-        }
-        .typed {
-            color: var(--accent);
-            font-weight: 700;
-            border-right: 2px solid var(--accent);
-            padding-right: 4px;
-            animation: blink 0.7s infinite;
-        }
-        @keyframes blink { 50% { border-color: transparent; } }
-        .hero-desc { font-size: 1rem; margin-bottom: 32px; line-height: 1.6; opacity: 0.95; }
-        .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; }
-        
-        .slide-indicators {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 12px;
-            z-index: 15;
-        }
-        .indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.5);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .indicator.active {
-            background: var(--accent);
-            width: 32px;
-            border-radius: 20px;
-        }
-        
-        /* stats */
-        .stats-section {
-            background: white;
-            margin-top: -50px;
-            position: relative;
-            z-index: 20;
-            padding: 32px 32px;
-            border-radius: 32px;
-            box-shadow: var(--shadow-xl);
-            margin-bottom: 60px;
-        }
-        .stats-grid {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
-            text-align: center;
-        }
-        .stat-item { flex: 1; min-width: 140px; transition: transform 0.2s; }
-        .stat-item:hover { transform: translateY(-5px); }
-        .stat-number { font-size: 2.8rem; font-weight: 800; color: var(--accent); }
-        .stat-label { font-weight: 500; color: var(--gray-600); }
-        
-        /* services grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 32px;
-            margin: 50px 0;
-        }
-        .service-card {
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
-            transition: all 0.35s ease;
-            border: 1px solid var(--gray-200);
-            cursor: pointer;
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-        }
-        .service-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        .service-card:hover .service-img { transform: scale(1.05); }
-        .service-content { padding: 24px; text-align: center; }
-        .service-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 16px; }
-        .service-content h3 { font-size: 1.35rem; margin-bottom: 10px; color: var(--primary); }
-        .service-link {
-            display: inline-block;
-            color: var(--accent);
-            font-weight: 600;
-            margin-top: 12px;
-            text-decoration: none;
-        }
-        .service-link:hover { transform: translateX(5px); display: inline-block; }
-        
-        /* why choose */
-        .why-choose { padding: 60px 0 40px; }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        .feature {
-            text-align: center;
-            padding: 32px 20px;
-            background: var(--gray-50);
-            border-radius: 28px;
-            transition: all 0.3s;
-        }
-        .feature:hover { transform: translateY(-6px); background: white; box-shadow: var(--shadow-lg); }
-        .feature i { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
-        
-        /* testimonials */
-        .testimonials-section {
-            background: linear-gradient(135deg, var(--primary) 0%, #0a2a44 100%);
-            padding: 80px 0;
-            margin: 60px 0;
-            color: white;
-        }
-        .testimonials-section .section-title { color: white; }
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .testimonial-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            padding: 32px;
-            border-radius: 28px;
-            text-align: center;
-            transition: 0.3s;
-        }
-        .testimonial-card:hover { background: rgba(255,255,255,0.2); transform: translateY(-5px); }
-        .testimonial-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 16px; }
-        
-        /* CTA */
-        .ready-section {
-            background: linear-gradient(110deg, var(--primary) 0%, var(--primary-dark) 100%);
-            padding: 70px 40px;
-            text-align: center;
-            border-radius: 40px;
-            margin: 60px 0;
-            color: white;
-        }
-        .ready-section h2 { font-size: 2rem; margin-bottom: 16px; }
-        
-        /* ========== REDESIGNED CONTACT SECTION - MODERN & CLEAN ========== */
-        .contact-modern {
-            background: var(--gray-50);
-            border-radius: 48px;
-            margin: 60px 0;
-            overflow: hidden;
-            box-shadow: var(--shadow-xl);
-        }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 0;
-        }
-        /* left side - info panel */
-        .contact-info-panel {
-            background: var(--primary);
-            padding: 48px 40px;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .contact-badge {
-            display: inline-block;
-            background: rgba(241,90,36,0.2);
-            padding: 6px 16px;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            width: fit-content;
-            margin-bottom: 32px;
-            border: 1px solid rgba(241,90,36,0.4);
-        }
-        .contact-info-panel h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        .contact-info-panel h2 span { color: var(--accent); }
-        .contact-desc {
-            margin-bottom: 40px;
-            opacity: 0.85;
-            line-height: 1.5;
-        }
-        .info-list {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            margin-bottom: 48px;
-        }
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        .info-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            color: var(--accent);
-        }
-        .info-text h4 {
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-        .info-text p, .info-text a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-        .info-text a:hover { color: var(--accent); }
-        .service-pills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .pill {
-            background: rgba(255,255,255,0.1);
-            padding: 6px 14px;
-            border-radius: 40px;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-        /* right side - form */
-        .contact-form-panel {
-            background: white;
-            padding: 48px 40px;
-        }
-        .contact-form-panel h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-        .form-subhead {
-            color: var(--gray-600);
-            margin-bottom: 32px;
-            font-size: 0.9rem;
-        }
-        .form-group {
-            margin-bottom: 24px;
-        }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 14px 18px;
-            border: 2px solid var(--gray-200);
-            border-radius: 20px;
-            font-family: inherit;
-            transition: 0.2s;
-            font-size: 0.95rem;
-            background: var(--gray-50);
-        }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            border-color: var(--accent);
-            outline: none;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(241,90,36,0.1);
-        }
-        .error-message { color: #dc2626; font-size: 0.7rem; display: none; margin-top: 6px; margin-left: 12px; }
-        .error-message.show { display: block; }
-        .submit-btn {
-            background: var(--accent);
-            width: 100%;
-            padding: 15px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-        }
-        .submit-btn:hover { background: var(--accent-dark); transform: translateY(-2px); }
-        .form-footer {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 0.75rem;
-            color: var(--gray-600);
-        }
-        
-        @media (max-width: 900px) {
-            .contact-grid { grid-template-columns: 1fr; }
-            .contact-info-panel, .contact-form-panel { padding: 36px 28px; }
-            .hero h1 { font-size: 2rem; }
-            .section-title { font-size: 1.8rem; }
-        }
-        
-        .whatsapp-float {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
-            background: #25D366;
-            color: white;
-            border-radius: 60px;
-            padding: 12px 28px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            font-weight: bold;
-            z-index: 1000;
-            box-shadow: var(--shadow-xl);
-            transition: 0.2s;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
-        .whatsapp-float:hover { transform: scale(1.07); background: #128C7E; }
-        
-        .back-to-top {
-            position: fixed;
-            bottom: 100px;
-            right: 28px;
-            width: 46px;
-            height: 46px;
-            background: var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.2s;
-            z-index: 999;
-            color: white;
-        }
-        .back-to-top.show { opacity: 1; visibility: visible; }
-        footer {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 48px 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fantech Construction | Building Contractor in Nairobi, Kenya</title>
+<meta name="description" content="Fantech Construction, Nairobi. Architectural designs, BOQ, general construction, civil works, swimming pools, electric fences, interior finishing and material supply. Call 0718 697 501.">
+<meta name="google-site-verification" content="FOBs-Wcr8WD2ebBp4HINy86VuV31xeJ58ZVja39VT2w">
+<meta name="theme-color" content="#0A2540">
+<link rel="canonical" href="https://www.fantechconstructions.co.ke/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fantech Construction">
+<meta property="og:locale" content="en_KE">
+<meta property="og:url" content="https://www.fantechconstructions.co.ke/">
+<meta property="og:title" content="Fantech Construction | Building Contractor in Nairobi, Kenya">
+<meta property="og:description" content="Design, BOQ, construction, civil works, pools and electric fences across Kenya.">
+<meta property="og:image" content="https://www.fantechconstructions.co.ke/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"GeneralContractor","name":"Fantech Construction","url":"https://www.fantechconstructions.co.ke/","telephone":"+254718697501","email":"fanuelodeny@gmail.com","description":"Architectural designs, BOQ, general construction, civil works, swimming pools, electric fences, interior finishing and material supply in Nairobi and across Kenya.","areaServed":{"@type":"Country","name":"Kenya"},"address":{"@type":"PostalAddress","addressLocality":"Nairobi","addressCountry":"KE"},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"18:00"}}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you work outside Nairobi?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our office is in Nairobi and we serve clients across Kenya."}},{"@type":"Question","name":"How do I get a quote?","acceptedAnswer":{"@type":"Answer","text":"Fill in the quote form on this page or call 0718 697 501. We reply on WhatsApp, usually within 30 minutes."}},{"@type":"Question","name":"What is a BOQ?","acceptedAnswer":{"@type":"Answer","text":"A Bill of Quantities lists the materials, quantities and estimated costs for a project, so you can budget properly and compare quotes."}},{"@type":"Question","name":"Which services do you offer?","acceptedAnswer":{"@type":"Answer","text":"Architectural and structural designs, BOQ, general construction, civil works, supply of materials, swimming pools, interior finishing and electric fence installation."}},{"@type":"Question","name":"What are your working hours?","acceptedAnswer":{"@type":"Answer","text":"Monday to Saturday, 8AM to 6PM."}}]}</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top" aria-label="Fantech Construction home"><span>FANTECH</span><small>CONSTRUCTION</small></a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    <nav class="links" id="links"><a href="/services">Services</a><a href="/projects">Projects</a><a href="#process">Process</a><a href="#faq">FAQ</a><a class="btn sm" href="#contact">Get a Quote</a></nav>
+  </div>
+</header>
 
-<div class="loader" id="loader"></div>
-<div class="progress-bar" id="progressBar"></div>
-
-<!-- top bar -->
-<div style="background: var(--primary); color: white; padding: 10px 0; font-size: 13px;">
-    <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
-        <div><i class="fas fa-phone-alt"></i> <a href="tel:+254718697501" style="color:var(--accent); text-decoration:none;">0718 697 501</a> | <i class="fas fa-envelope"></i> <a href="mailto:fanuelodeny@gmail.com" style="color:var(--accent);">fanuelodeny@gmail.com</a></div>
-        <div><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya | <i class="fas fa-clock"></i> Mon-Sat 8AM-6PM | <span id="liveTime"></span></div>
+<main id="main">
+<section class="hero" id="top">
+  <div class="grid-bg"></div>
+  <div class="wrap hero-in">
+    <p class="pill">Nairobi &middot; Serving all of Kenya</p>
+    <h1>We build with <em>precision</em>,<br>on time and on budget.</h1>
+    <p class="lead">Fantech Construction delivers <b id="word">architectural designs</b> for homes, businesses and infrastructure, with clear BOQs and no hidden costs.</p>
+    <div class="cta">
+      <a class="btn" href="#contact">Free Consultation</a>
+      <a class="btn ghost" href="tel:+254718697501">Call 0718 697 501</a>
     </div>
-</div>
-
-<!-- navbar -->
-<div style="position: sticky; top:0; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.03);">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; flex-wrap: wrap;">
-        <div class="logo">
-            <h1 style="font-size:1.5rem; color:var(--primary);">FANTECH<br><span style="font-size:0.65rem; color:var(--accent);">CONSTRUCTION</span></h1>
-        </div>
-        <div style="display: flex; gap: 28px; align-items: center; flex-wrap: wrap;">
-            <a href="#home" style="text-decoration:none; font-weight:500; color:var(--gray-900);">Home</a>
-            <a href="#services" style="text-decoration:none; font-weight:500; color:var(--gray-900);">Services</a>
-            <a href="#testimonials" style="text-decoration:none; font-weight:500; color:var(--gray-900);">Testimonials</a>
-            <a href="#contact" style="background:var(--accent); color:white; padding:8px 26px; border-radius:40px; text-decoration:none; font-weight:600;">Get a Quote</a>
-        </div>
-    </div>
-</div>
-
-<!-- HERO SLIDESHOW - one by one -->
-<section class="hero" id="home">
-    <div class="slide slide1 active"></div>
-    <div class="slide slide2"></div>
-    <div class="slide slide3"></div>
-    <div class="slide slide4"></div>
-    <div class="slide slide5"></div>
-    <div class="container hero-content">
-        <div class="hero-badge"><i class="fas fa-hard-hat"></i> Kenya's Premier Construction Partner</div>
-        <h1>Building the Future with <span>Precision</span> & Excellence</h1>
-        <div class="typing-text">We specialize in: <span class="typed" id="typed-text"></span></div>
-        <p class="hero-desc">Trusted construction partner delivering world-class residential, commercial, and infrastructure projects across Kenya. 250+ projects completed with 98% client satisfaction.</p>
-        <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Free Consultation</a>
-            <a href="tel:+254718697501" class="btn btn-outline-light"><i class="fas fa-phone-alt"></i> Call Now</a>
-        </div>
-    </div>
-    <div class="slide-indicators">
-        <div class="indicator active" data-slide="0"></div>
-        <div class="indicator" data-slide="1"></div>
-        <div class="indicator" data-slide="2"></div>
-        <div class="indicator" data-slide="3"></div>
-        <div class="indicator" data-slide="4"></div>
-    </div>
+  </div>
 </section>
 
-<div class="container">
-    <div class="stats-section">
-        <div class="stats-grid">
-            <div class="stat-item"><div class="stat-number" data-target="250">0</div><div class="stat-label">Projects Completed</div></div>
-            <div class="stat-item"><div class="stat-number" data-target="18">0</div><div class="stat-label">Years Experience</div></div>
-            <div class="stat-item"><div class="stat-number" data-target="50">0</div><div class="stat-label">Expert Team</div></div>
-            <div class="stat-item"><div class="stat-number" data-target="98">0</div><div class="stat-label">Client Satisfaction</div></div>
-        </div>
+<section class="wrap stats" aria-label="Fantech in numbers">
+  <div><b data-n="250" data-s="+">0</b><span>Projects completed</span></div>
+  <div><b data-n="18" data-s="+">0</b><span>Years experience</span></div>
+  <div><b data-n="50" data-s="+">0</b><span>Team members</span></div>
+  <div><b data-n="98" data-s="%">0</b><span>Client satisfaction</span></div>
+</section>
+
+<section class="wrap sec" id="services">
+  <h2>What we do</h2>
+  <p class="sub">Eight services, one accountable team from drawing board to handover.</p>
+  <div class="cards">
+    <a class="card" href="#contact" data-svc="Architectural &amp; Structural Designs"><i>01</i><h3>Architectural &amp; Structural Designs</h3><p>Modern, approved drawings for any building type.</p></a>
+    <a class="card" href="#contact" data-svc="BOQ (Bill of Quantities)"><i>02</i><h3>BOQ (Bill of Quantities)</h3><p>Accurate cost estimates and material schedules.</p></a>
+    <a class="card" href="#contact" data-svc="General Construction"><i>03</i><h3>General Construction</h3><p>Residential, commercial and industrial builds.</p></a>
+    <a class="card" href="#contact" data-svc="Civil Works"><i>04</i><h3>Civil Works</h3><p>Roads, bridges and earthworks with heavy equipment.</p></a>
+    <a class="card" href="#contact" data-svc="Supply of Materials"><i>05</i><h3>Supply of Materials</h3><p>Quality cement, steel, timber and finishes.</p></a>
+    <a class="card" href="#contact" data-svc="Swimming Pool Design &amp; Build"><i>06</i><h3>Swimming Pool Design &amp; Build</h3><p>Residential and commercial pools.</p></a>
+    <a class="card" href="#contact" data-svc="Interior Finishing"><i>07</i><h3>Interior Finishing</h3><p>Premium interior design and finishing.</p></a>
+    <a class="card" href="#contact" data-svc="Electric Fence Installation"><i>08</i><h3>Electric Fence Installation</h3><p>Security electric fences and automation.</p></a>
+  </div>
+</section>
+
+<section class="dark" id="process">
+  <div class="wrap sec">
+    <h2>How we work</h2>
+    <ol class="steps">
+      <li><b>1</b><h3>Consultation</h3><p>Tell us your plan, site and budget.</p></li>
+      <li><b>2</b><h3>Design &amp; BOQ</h3><p>Approved drawings and a transparent cost breakdown.</p></li>
+      <li><b>3</b><h3>Build</h3><p>Skilled crews, quality materials, regular updates.</p></li>
+      <li><b>4</b><h3>Handover</h3><p>Final checks and delivery as promised.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="wrap sec" id="why">
+  <h2>Why choose Fantech?</h2>
+  <div class="cards four">
+    <div class="card"><h3>Licensed &amp; certified</h3><p>NCA approved professionals.</p></div>
+    <div class="card"><h3>On-time delivery</h3><p>Project completion as promised.</p></div>
+    <div class="card"><h3>Quality materials</h3><p>Premium trusted suppliers.</p></div>
+    <div class="card"><h3>Transparent pricing</h3><p>Detailed BOQ, no hidden costs.</p></div>
+  </div>
+</section>
+
+<section class="dark" id="reviews">
+  <div class="wrap sec">
+    <h2>What clients say</h2>
+    <div class="cards three">
+      <blockquote class="card q"><p>&ldquo;Fantech delivered our commercial complex on time and within budget. Exceptional quality.&rdquo;</p><cite>James Mwangi</cite></blockquote>
+      <blockquote class="card q"><p>&ldquo;From design to completion, the team was transparent and skilled. Dream home became reality.&rdquo;</p><cite>Sarah Ochieng</cite></blockquote>
+      <blockquote class="card q"><p>&ldquo;Outstanding electric fence and renovation. Attention to detail exceeded expectations.&rdquo;</p><cite>David Kimani</cite></blockquote>
     </div>
-</div>
+  </div>
+</section>
 
-<!-- SERVICES SECTION (Projects removed) -->
-<div class="container" id="services">
-    <h2 class="section-title" data-aos="fade-up">What We Do</h2>
-    <div class="services-grid">
-        <div class="service-card" data-aos="zoom-in"><img class="service-img" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=70" alt="design" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-drafting-compass"></i></div><h3>Architectural & Structural Designs</h3><p>Modern approved drawings for any building type</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
-        <div class="service-card" data-aos="zoom-in"><img class="service-img" src="https://images.pexels.com/photos/209251/pexels-photo-209251.jpeg?w=600&q=70" alt="boq" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-calculator"></i></div><h3>BOQ (Bill of Quantities)</h3><p>Accurate cost estimates & material schedules</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
-        <div class="service-card" data-aos="zoom-in"><img class="service-img" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=70" alt="construction" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-building"></i></div><h3>General Construction</h3><p>Residential, commercial & industrial builds</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
-        <div class="service-card" data-aos="zoom-in"><img class="service-img" src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=70" alt="civil" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-road"></i></div><h3>Civil Works</h3><p>Roads, bridges, earthworks with heavy equipment</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
-        <div class="service-card" data-aos="zoom-in"><img class="service-img" src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=70" alt="materials" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-truck"></i></div><h3>Supply of Materials</h3><p>Quality cement, steel, timber & finishes</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
-        <div class="service-card" data-aos="zoom-in"><img class="service-img" src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&q=70" alt="pool" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-swimmer"></i></div><h3>Swimming Pool Design & Build</h3><p>Luxury residential & commercial pools</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
-        <div class="service-card" data-aos="zoom-in"><img class="service-img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=70" alt="interior" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-paint-roller"></i></div><h3>Interior Finishing</h3><p>Premium interior design and finishing</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
-        <div class="service-card" data-aos="zoom-in"><img class="service-img" src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=70" alt="fence" loading="lazy"><div class="service-content"><div class="service-icon"><i class="fas fa-bolt"></i></div><h3>Electric Fence Installation</h3><p>Security electric fences & automation</p><a href="#contact" class="service-link">Get a Quote →</a></div></div>
-    </div>
-</div>
+<section class="wrap sec" id="faq"><h2>Frequently asked questions</h2><div class="faq"><details><summary>Do you work outside Nairobi?</summary><p>Yes. Our office is in Nairobi and we serve clients across Kenya.</p></details><details><summary>How do I get a quote?</summary><p>Fill in the quote form on this page or call 0718 697 501. We reply on WhatsApp, usually within 30 minutes.</p></details><details><summary>What is a BOQ?</summary><p>A Bill of Quantities lists the materials, quantities and estimated costs for a project, so you can budget properly and compare quotes.</p></details><details><summary>Which services do you offer?</summary><p>Architectural and structural designs, BOQ, general construction, civil works, supply of materials, swimming pools, interior finishing and electric fence installation.</p></details><details><summary>What are your working hours?</summary><p>Monday to Saturday, 8AM to 6PM.</p></details></div></section>
 
-<!-- Why Choose Us -->
-<div class="container"><div class="why-choose"><h2 class="section-title" data-aos="fade-up">Why Choose Fantech?</h2><div class="features-grid"><div class="feature" data-aos="zoom-in"><i class="fas fa-certificate"></i><h3>Licensed & Certified</h3><p>NCA approved professionals</p></div><div class="feature" data-aos="zoom-in"><i class="fas fa-clock"></i><h3>On-Time Delivery</h3><p>Project completion as promised</p></div><div class="feature" data-aos="zoom-in"><i class="fas fa-shield-alt"></i><h3>Quality Materials</h3><p>Premium trusted suppliers</p></div><div class="feature" data-aos="zoom-in"><i class="fas fa-chart-line"></i><h3>Transparent Pricing</h3><p>Detailed BOQ, no hidden costs</p></div></div></div></div>
+<section class="wrap sec contact" id="contact">
+  <div>
+    <h2>Request a free quote</h2>
+    <p class="sub">Send the form and we respond on WhatsApp, usually within 30 minutes.</p>
+    <ul class="info">
+      <li><b>Call</b><a href="tel:+254718697501">0718 697 501</a> / <a href="tel:+254781250142">0781 250 142</a></li>
+      <li><b>Email</b><a href="mailto:fanuelodeny@gmail.com">fanuelodeny@gmail.com</a></li>
+      <li><b>Office</b>Nairobi, Kenya (nationwide services)</li>
+      <li><b>Hours</b>Mon&ndash;Sat, 8AM&ndash;6PM</li>
+      <li><b>Managing Director</b>Fanuel Omondi Odeny</li>
+    </ul>
+  </div>
+  <form id="quote" novalidate>
+    <label>Full name<input id="name" autocomplete="name" required></label>
+    <label>Phone<input id="phone" type="tel" autocomplete="tel" placeholder="0718 697501" required></label>
+    <label>Service<select id="service" required><option value="">Select a service</option><option>Architectural &amp; Structural Designs</option><option>BOQ (Bill of Quantities)</option><option>General Construction</option><option>Civil Works</option><option>Supply of Materials</option><option>Swimming Pool Design &amp; Build</option><option>Interior Finishing</option><option>Electric Fence Installation</option></select></label>
+    <label>Project details<textarea id="details" rows="3" placeholder="Location, budget, timeline"></textarea></label>
+    <p class="err" id="err" role="alert"></p>
+    <button class="btn" type="submit">Send via WhatsApp</button>
+  </form>
+</section>
+</main>
 
-<!-- Testimonials -->
-<div class="testimonials-section" id="testimonials"><div class="container"><h2 class="section-title" data-aos="fade-up">What Our Clients Say</h2><div class="testimonials-grid"><div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"Fantech delivered our commercial complex on time and within budget. Exceptional quality."</p><h4>- James Mwangi</h4></div><div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"From design to completion, the team was transparent and skilled. Dream home became reality."</p><h4>- Sarah Ochieng</h4></div><div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"Outstanding electric fence and renovation. Attention to detail exceeded expectations."</p><h4>- David Kimani</h4></div></div></div></div>
+<footer>
+  <div class="wrap">
+    <p><b>FANTECH CONSTRUCTION</b> &middot; Nairobi, Kenya</p>
+    <p><a href="/services">Services</a> &middot; <a href="/projects">Projects</a> &middot; <a href="#faq">FAQ</a></p>
+    <p>0718 697 501 &middot; fanuelodeny@gmail.com</p>
+    <p>&copy; <span id="yr">2026</span> Fantech Construction. All rights reserved.</p>
+  </div>
+</footer>
 
-<!-- CTA -->
-<div class="container"><div class="ready-section" data-aos="zoom-in"><h2>Ready to Build Your Dream Project?</h2><p>Get in touch today for a free consultation and quote.</p><a href="#contact" class="btn btn-primary" style="background:var(--accent); margin-top:20px;"><i class="fas fa-arrow-right"></i> Get a Quote</a></div></div>
-
-<!-- REDESIGNED CONTACT SECTION - Modern & Clean -->
-<div class="container" id="contact">
-    <div class="contact-modern">
-        <div class="contact-grid">
-            <!-- left panel -->
-            <div class="contact-info-panel">
-                <div>
-                    <div class="contact-badge"><i class="fas fa-hard-hat"></i> Get in Touch</div>
-                    <h2>Let's discuss <span>your project</span></h2>
-                    <p class="contact-desc">We're here to answer your questions and provide expert guidance for your construction needs.</p>
-                    <div class="info-list">
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
-                            <div class="info-text"><h4>Call Us</h4><a href="tel:+254718697501">0718 697 501</a> / <a href="tel:+254781250142">0781 250 142</a></div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="info-text"><h4>Email Us</h4><a href="mailto:fanuelodeny@gmail.com">fanuelodeny@gmail.com</a></div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="info-text"><h4>Office Location</h4><p>Nairobi, Kenya (Nationwide Services)</p></div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-user-tie"></i></div>
-                            <div class="info-text"><h4>Managing Director</h4><p>Fanuel Omondi Odeny</p></div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div style="font-size:0.8rem; opacity:0.7;">Expertise across:</div>
-                    <div class="service-pills">
-                        <span class="pill">Architectural Design</span><span class="pill">BOQ</span><span class="pill">Construction</span>
-                        <span class="pill">Civil Works</span><span class="pill">Swimming Pools</span><span class="pill">Electric Fences</span>
-                        <span class="pill">Interior Finishing</span><span class="pill">Material Supply</span>
-                    </div>
-                </div>
-            </div>
-            <!-- right form -->
-            <div class="contact-form-panel">
-                <h3>Request a Free Quote</h3>
-                <p class="form-subhead">Fill the form, and we'll respond on WhatsApp within 30 minutes</p>
-                <form id="whatsappForm">
-                    <div class="form-group"><input type="text" id="fullName" placeholder="Full name" required></div>
-                    <div class="error-message" id="nameError">Please enter your full name</div>
-                    <div class="form-group"><input type="tel" id="phoneNumber" placeholder="Phone number (e.g., 0718 697501)" required></div>
-                    <div class="error-message" id="phoneError">Valid Kenyan phone number required</div>
-                    <div class="form-group">
-                        <select id="serviceType" required>
-                            <option value="">Select a service</option>
-                            <option>Architectural & Structural Designs</option><option>BOQ (Bill of Quantities)</option>
-                            <option>General Construction</option><option>Civil Works</option><option>Supply of Materials</option>
-                            <option>Swimming Pool Design & Build</option><option>Interior Finishing</option><option>Electric Fence Installation</option>
-                        </select>
-                    </div>
-                    <div class="error-message" id="serviceError">Please select a service</div>
-                    <div class="form-group"><textarea rows="3" id="projectDetails" placeholder="Project details (location, budget, timeline...)"></textarea></div>
-                    <button type="submit" class="submit-btn" id="submitBtn"><i class="fab fa-whatsapp"></i> Send via WhatsApp →</button>
-                    <div class="form-footer"><i class="fas fa-lock"></i> Your info is secure. Fast response guaranteed.</div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
-<a href="https://wa.me/254718697501?text=Hello%20Fantech%2C%20I%20need%20a%20quote%20for%20construction%20services." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp fa-lg"></i> Chat on WhatsApp</a>
-
-<footer><div class="container"><p><strong>FANTECH CONSTRUCTION SERVICES</strong> | Your Satisfaction Our Priority</p><p>📞 0718 697 501 · ✉️ fanuelodeny@gmail.com · 📍 NAIROBI, KENYA</p><p>© 2026 Fantech Construction | Kenya's Premier Builder</p></div></footer>
-
-<script>
-    // Immediate load - no delay
-    document.getElementById('loader')?.remove();
-    // progress bar
-    window.addEventListener('scroll', () => { const winScroll = document.documentElement.scrollTop; const height = document.documentElement.scrollHeight - window.innerHeight; const scrolled = (winScroll / height) * 100; if(document.getElementById('progressBar')) document.getElementById('progressBar').style.width = scrolled + '%'; });
-    function updateTime() { const now = new Date().toLocaleTimeString('en-KE', { timeZone: 'Africa/Nairobi', hour:'2-digit', minute:'2-digit', second:'2-digit' }); if(document.getElementById('liveTime')) document.getElementById('liveTime').innerText = now; }
-    updateTime(); setInterval(updateTime,1000);
-    // typing
-    const words = ["Architectural Designs", "BOQ & Costing", "General Construction", "Civil Works", "Swimming Pools", "Electric Fences"];
-    let idx=0, isDel=false, cur=""; const typedSpan=document.getElementById("typed-text");
-    function typeEffect(){ if(!typedSpan) return; if(isDel) cur=words[idx].substring(0,cur.length-1); else cur=words[idx].substring(0,cur.length+1); typedSpan.textContent=cur; if(!isDel && cur===words[idx]){ isDel=true; setTimeout(typeEffect,2000); } else if(isDel && cur===""){ isDel=false; idx=(idx+1)%words.length; setTimeout(typeEffect,400); } else setTimeout(typeEffect,isDel?70:120); } typeEffect();
-    // counter
-    const counters=document.querySelectorAll('.stat-number'); const obs=new IntersectionObserver((e)=>{ e.forEach(entry=>{ if(entry.isIntersecting){ counters.forEach(c=>{ const t=+c.dataset.target; let count=0; const upd=()=>{ count+=t/150; if(count<t){ c.innerText=Math.ceil(count)+(t===98?'%':'+'); requestAnimationFrame(upd); } else c.innerText=t+(t===98?'%':'+'); }; upd(); }); obs.unobserve(entry.target); } }); },{threshold:0.5}); document.querySelectorAll('.stats-section').forEach(s=>obs.observe(s));
-    // slideshow one by one
-    let activeSlide=0, slideInterval; const slides=document.querySelectorAll('.slide'), indicators=document.querySelectorAll('.indicator'); const totalSlides=slides.length;
-    function showSlide(i){ slides.forEach((s,idx)=>s.classList.toggle('active',idx===i)); indicators.forEach((ind,idx)=>ind.classList.toggle('active',idx===i)); activeSlide=i; }
-    function nextSlide(){ showSlide((activeSlide+1)%totalSlides); }
-    function startSlide(){ if(slideInterval) clearInterval(slideInterval); slideInterval=setInterval(nextSlide,5000); }
-    indicators.forEach((ind,i)=>{ ind.addEventListener('click',()=>{ showSlide(i); clearInterval(slideInterval); startSlide(); }); }); startSlide();
-    // AOS
-    const aos=document.querySelectorAll('[data-aos]'); const ao=new IntersectionObserver((e)=>{ e.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('aos-animate'); ao.unobserve(entry.target); } }); },{threshold:0.1}); aos.forEach(el=>ao.observe(el));
-    // back to top
-    const back=document.getElementById('backToTop'); window.addEventListener('scroll',()=>{ if(window.scrollY>400) back.classList.add('show'); else back.classList.remove('show'); }); back.addEventListener('click',(e)=>{ e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); });
-    // service card to form
-    document.querySelectorAll('.service-link').forEach(link=>{ link.addEventListener('click',(e)=>{ e.preventDefault(); const svc=link.closest('.service-card')?.querySelector('h3')?.innerText||''; const sel=document.getElementById('serviceType'); if(sel && svc){ for(let opt of sel.options) if(opt.value===svc) opt.selected=true; } document.getElementById('contact').scrollIntoView({behavior:'smooth'}); }); });
-    // form whatsapp
-    function validateKenyanPhone(p){ const clean=p.replace(/\s/g,''); return /^(07|01)\d{8}$|^2547\d{8}$|^\+2547\d{8}$/.test(clean); }
-    document.getElementById('whatsappForm').addEventListener('submit',function(e){ e.preventDefault(); let valid=true; const name=document.getElementById('fullName').value.trim(); const phone=document.getElementById('phoneNumber').value.trim(); const service=document.getElementById('serviceType').value;
-        if(name.length<2){ document.getElementById('nameError').classList.add('show'); valid=false; } else document.getElementById('nameError').classList.remove('show');
-        if(!validateKenyanPhone(phone)){ document.getElementById('phoneError').classList.add('show'); valid=false; } else document.getElementById('phoneError').classList.remove('show');
-        if(!service){ document.getElementById('serviceError').classList.add('show'); valid=false; } else document.getElementById('serviceError').classList.remove('show');
-        if(!valid) return;
-        const msg=`🏗️ *NEW CONSTRUCTION QUOTE* 🏗️\n*Client:* ${name}\n*Phone:* ${phone}\n*Service:* ${service}\n*Details:* ${document.getElementById('projectDetails').value||'Not specified'}\nSubmitted via Fantech website.`;
-        window.open(`https://wa.me/254718697501?text=${encodeURIComponent(msg)}`,'_blank');
-        const toast=document.createElement('div'); toast.innerText='✓ Opening WhatsApp...'; toast.style.position='fixed'; toast.style.bottom='80px'; toast.style.left='50%'; toast.style.transform='translateX(-50%)'; toast.style.background='#10B981'; toast.style.color='white'; toast.style.padding='10px 24px'; toast.style.borderRadius='40px'; toast.style.zIndex='9999'; document.body.appendChild(toast); setTimeout(()=>toast.remove(),2500);
-        this.reset();
-    });
-</script>
+<a class="wa" href="https://wa.me/254718697501?text=Hello%20Fantech%2C%20I%20need%20a%20quote." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">WhatsApp</a>
+<script src="/assets/main.js" defer></script>
 </body>
 </html>
-```
